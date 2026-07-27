@@ -203,7 +203,7 @@
     <input type="datetime-local" id="scheduleTime" />
 
     <div class="admin-buttons">
-      <button onclick="postBlog()">Post</button>
+      <button onclick="preparePost()">Create Post</button>
       <button onclick="saveDraft()">Save Draft</button>
       <button onclick="schedulePost()">Schedule Post</button>
     </div>
@@ -603,7 +603,10 @@ function buildGallery() {
    BLOG SYSTEM (STATE)
 ========================================================= */
 
-let blogs = JSON.parse(localStorage.getItem("blogs") || "[]");
+// Public posts loaded from blog.json
+let blogs = [];
+
+// Private admin storage
 let archivedBlogs = JSON.parse(localStorage.getItem("archivedBlogs") || "[]");
 let trash = JSON.parse(localStorage.getItem("trash") || "[]");
 let drafts = JSON.parse(localStorage.getItem("drafts") || "[]");
@@ -614,6 +617,27 @@ let adminUnlocked = false;
 
 const draftKey = "blogDraft";
 
+
+/* =========================================================
+   LOAD PUBLIC BLOG POSTS
+========================================================= */
+
+async function loadBlogs() {
+  try {
+    const response = await fetch("blog.json");
+
+    if (!response.ok) {
+      throw new Error("blog.json could not be loaded");
+    }
+
+    blogs = await response.json();
+
+    renderBlogs();
+
+  } catch (error) {
+    console.error("Blog loading error:", error);
+  }
+}
 
 /* =========================================================
    BLOG OPEN / CLOSE
@@ -933,11 +957,25 @@ function saveDraft() {
 ========================================================= */
 
 function saveBlogs() {
-  localStorage.setItem("blogs", JSON.stringify(blogs));
   localStorage.setItem("archivedBlogs", JSON.stringify(archivedBlogs));
   localStorage.setItem("trash", JSON.stringify(trash));
 }
 
+/* =========================================================
+   EXPORT SYSTEM
+========================================================= */
+function exportBlogPost(){
+
+    const publicBlog = {
+        title,
+        text,
+        date
+    };
+
+    // creates downloadable blog.json update
+}
+
+loadBlogs();
 
 /* =========================================================
    GLOBAL PATCH
