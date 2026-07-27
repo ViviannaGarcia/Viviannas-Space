@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "name": "Kat DeLuna - Whine Up",
+    "file": "music/Kat DeLuna - Whine Up.mp3"
+  },
+  {
+    "name": "Prima J - Rock Star",
+    "file": "music/Prima J - Rock Star.mp3"
+  },
+  {
+    "name": "The General's Heart",
+    "file": "music/The General's Heart.mp3"
+  }
+]

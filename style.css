@@ -512,6 +512,31 @@ body {
 }
 
 /* =========================================================
+   🖼️ ABOUT ME IMAGE SIZE FIX
+========================================================= */
+
+/* Contain the wrapper so the image doesn't overflow */
+.about-me-box,
+.profile-details {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Target the ABOUT ME image directly */
+img[src*="ABOUT ME.png"],
+img[src*="about me.png"],
+.about-me-box img {
+  width: 100% !important;      /* Fits the container width */
+  max-width: 100% !important;  /* Prevents spilling outside sidebar */
+  height: auto !important;     /* Keeps original aspect ratio */
+  display: block;
+  margin: 0 auto 10px auto;   /* Centers the image with bottom spacing */
+  object-fit: contain;
+}
+
+/* =========================================================
    ⚡ PFP ELECTRIC SYSTEM (RESTORED + ORGANIZED)
    - No changes to visuals, only structure cleanup
 ========================================================= */
@@ -1222,3 +1247,72 @@ button:hover {
   box-shadow: 0 0 10px cyan;
 }
 
+
+
+/* =========================
+   FRIEND GRID
+========================= */
+
+.top8-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.pet-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: 1px solid #1aff1a;
+  border-radius: 8px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.pet-card img:hover {
+  transform: scale(1.08);
+  border-color: #ff00ff;
+  box-shadow: 0 0 8px #ff00ff;
+}
+
+.pet-card p {
+  margin: 3px 0 0 0;
+  font-size: 10px;
+  color: #7CFF7C;
+  font-weight: bold;
+}
+
+
+/* =========================
+   💬 CUSDIS GUESTBOOK STYLING
+========================= */
+
+#cusdis_thread {
+  margin-top: 10px;
+  padding: 8px;
+  background: rgba(0, 10, 0, 0.5);
+  border-radius: 6px;
+}
+
+#cusdis_thread iframe {
+  width: 100% !important;
+  min-height: 300px !important;
+  border: none !important;
+}
+
+
+
+/* Global page font */
+body {
+  font-family: 'VT323', monospace;
+  font-size: 18px; /* Pixel fonts look best slightly larger */
+  letter-spacing: 1px;
+}
+
+/* Titles & Headers */
+h1, h2, h3, .box-title, .xp-titlebar {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
+  text-transform: uppercase;
+}

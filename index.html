@@ -2,6 +2,7 @@
 <html>
 
 <head>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
   <title>Vivianna's Space</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -32,127 +33,137 @@
   <!-- =========================
        LEFT SIDEBAR
   ========================= -->
-  <div class="left">
+<div class="left">
 
-    <div class="profile-box">
-      <div class="pfp-wrapper">
-        <img src="images/ProfilePic.jpeg" class="pfp">
-      </div> 
-      <div class="electric-layer"></div>
+  <div class="profile-box">
+    <div class="pfp-wrapper">
+      <img src="images/ProfilePic.jpeg" class="pfp">
+    </div> 
+    <div class="electric-layer"></div>
 
-      <h3>Vivianna</h3>
+    <h3>Vivianna</h3>
 
-      <div class="status">
-        <span id="statusDot"></span>
-        <span id="statusText">Offline</span>
+    <div class="status">
+      <span id="statusDot"></span>
+      <span id="statusText">Offline</span>
+    </div>
+  </div>
+
+  <div class="profile-box about-me-box">
+    <h3 class="box-title">✨ About Me</h3>
+    
+    <div class="profile-details">
+      <div class="profile-pic-container">
+        <img src="images/ABOUT ME.png" alt="Profile Picture" class="profile-pic">
+      </div>
+      
+      <div class="profile-info">
+        <p class="headline">"Welcome to my space! ⚡ nostalqia & qood vibes only 🎧"</p>
+        
+        <ul class="bio-details-list">
+          <li><strong>Name:</strong> Vivianna</li>
+          <li><strong>Age:</strong> Forever 21</li>
+          <li><strong>Status:</strong> Creating cool web stuff✨</li>
+          <li><strong>Mood:</strong> Nostalqic🌀</li>
+          <li><strong>Location:</strong> Cyberspace🌐</li>
+        </ul>
+
+        <div class="bio-text">
+          <p>
+            Hey! Welcome to my personal my-space. I love music, art, creatinq, and 2000s web aesthetics. This paqe is still under construction. Feel free to leave a note in my questbook!
+          </p>
+        </div>
       </div>
     </div>
-
-    <div class="profile-box">
-      <h3>About Me</h3>
-      <p>Welcome to my page ✨</p>
-    </div>
-
-    <div class="profile-box">
-      <h3>Status</h3>
-      <p id="musicStatus">Ready to play music</p>
-    </div>
-
   </div>
+
+  <div class="profile-box">
+    <h3 class="box-title">🐾 My Top friends</h3>
+    <div class="top8-grid">
+      <div class="pet-card">
+        <img src="images/pet1.jpg" alt="Pet 1">
+        <p>Rose 🐶</p>
+      </div>
+      <div class="pet-card">
+        <img src="images/pet2.jpg" alt="Pet 2">
+        <p>Nila 🐱</p>
+      </div>
+      <div class="pet-card">
+        <img src="images/pet3.jpg" alt="Pet 3">
+        <p>Dash 🐱</p>
+      </div>
+      <div class="pet-card">
+        <img src="images/pet4.jpg" alt="Pet 4">
+        <p>Rocket 🐶</p>
+      </div>
+      <div class="pet-card">
+        <img src="images/pet5.jpg" alt="Pet 5">
+        <p>Groot 🐶</p>
+      </div>
+      <div class="pet-card">
+        <img src="images/pet6.jpg" alt="Pet 6">
+        <p>Kevin 🦜</p>
+      </div>
+      <div class="pet-card">
+        <img src="images/pet7.jpg" alt="Pet 7">
+        <p>Hammy Sosa 🐹</p>
+      </div>
+    </div>
+  </div>
+
 
   <!-- =========================
        RIGHT COLUMN (FIXED)
   ========================= -->
-  <div class="right">
+</div> <div class="right">
 
-    <div class="xp-player"> 
-      <div class="xp-titlebar">
-        🎵 SOULLWAVVEE PLAYER
+  <div class="xp-player"> 
+    <div class="xp-titlebar">
+      🎵 SOULLWAVVEE PLAYER
+    </div>
+
+    <div class="xp-content">
+      <audio id="player"></audio>
+
+      <canvas id="visualizer"></canvas>
+
+      <div class="track-display" id="trackDisplay">
+        No song playing
       </div>
 
-      <div class="xp-content">
+      <div id="musicStatus" style="font-size: 11px; color: #888; text-align: center; margin-bottom: 5px;">
+        Loading playlist...
+      </div>
 
-        <canvas id="visualizer"></canvas>
+      <div class="controls">
+        <button onclick="togglePlay(this)">⏯ Play / Pause</button>
+        <button onclick="previousSong(this)">⏮ Prev</button>
+        <button onclick="nextSong(this)">⏭ Next</button>
+      </div>
 
-        <div class="track-display" id="trackDisplay">
-          No song playing
-        </div>
-
-        <div class="controls">
-          <button onclick="togglePlay(this)">⏯ Play / Pause</button>
-          <button onclick="nextSong(this)">⏭ Next</button>
-        </div>
-
-        <div class="visualizer-footer">
-          <span id="currentTime">0:00</span>
-
-          <input type="range" id="seekBar" value="0" min="0" max="100">
-
-          <span id="duration">0:00</span>
-        </div>
-
+      <div class="visualizer-footer">
+        <span id="currentTime">0:00</span>
+        <input type="range" id="seekBar" value="0" min="0" max="100">
+        <span id="duration">0:00</span>
       </div>
     </div>
-
   </div>
 
-</div>
+  <div class="profile-box guestbook-box" style="margin-top: 15px;">
+    <h3 class="box-title" style="color: #ff00ff; margin-top: 0;">💬 Anonymous Guestbook</h3>
+    
+    <div id="cusdis_thread"
+      data-host="https://cusdis.com"
+      data-app-id="7b608cee-abea-4691-a109-8eb269583f41"
+      data-page-id="homepage"
+      data-page-url="https://viviannagarcia.github.io/Viviannas-Space/"
+      data-page-title="Vivianna's Space Guestbook"
+    ></div>
 
-  <!-- =========================
-       AUDIO ELEMENT
-  ========================= -->
-  <audio id="player"></audio>
-
-  <!-- =========================
-       GALLERY WINDOW
-  ========================= -->
-  <div id="galleryWindow" class="popup-window">
-
-  <div class="popup-titlebar">
-  Photos
-
-  <div>
-    <button onclick="minimizeToTaskbar('galleryWindow','Gallery')">_</button>
-    <button class="close-btn" onclick="closeGallery()">X</button>
-  </div>
-</div>
-
-    <div class="popup-content">
-      <div class="popup-grid" id="galleryGrid"></div>
-    </div>
-
+    <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
   </div>
 
-  <!-- =========================
-       RADIO WINDOW
-  ========================= -->
-  <div id="radioWindow" class="popup-window">
-
-    <div class="popup-titlebar">
-      SOULLWAVVVE RADIO
-
-      <div>
-        <button onclick="minimizeToTaskbar('radioWindow','Radio')">_</button>
-        <button onclick="closeRadio()" class="close-btn">X</button>
-      </div>
-    </div>
-
-    <div class="popup-content">
-
-      <!-- LIVE STATUS -->
-      <div id="liveStatus" class="live-status">● CHECKING...</div>
-
-      <!-- STREAM -->
-      <audio id="radioStream" controls style="width:100%;" preload="auto">
-        <source src="http://192.168.1.189:8000/live" type="audio/mpeg">
-      </audio>
-
-      <!-- VISUALIZER -->
-      <canvas id="radioVisualizer"></canvas>
-
-    </div>
-
-  </div>
+</div> ```
 
 <!-- =========================
      BLOG WINDOW
@@ -429,32 +440,39 @@ function flash(btn) {
 
 
 /* =========================================================
-   STATUS SYSTEM
+   STATUS SYSTEM (10-SECOND IDLE TIMEOUT)
 ========================================================= */
 
 const statusDot = document.getElementById("statusDot");
 const statusText = document.getElementById("statusText");
 
-let lastActivity = Date.now();
+const IDLE_TIMEOUT = 10000; // 10 seconds
+let idleTimer = null;
 
 function setOnline() {
-  statusDot.style.background = "lime";
-  statusText.innerText = "Online";
+  if (statusDot) statusDot.style.background = "lime";
+  if (statusText) statusText.innerText = "Online";
 }
 
 function setAway() {
-  statusDot.style.background = "gray";
-  statusText.innerText = "Away";
+  if (statusDot) statusDot.style.background = "gray";
+  if (statusText) statusText.innerText = "Away";
 }
 
 function updateActivity() {
-  lastActivity = Date.now();
   setOnline();
+  clearTimeout(idleTimer);
+  idleTimer = setTimeout(setAway, IDLE_TIMEOUT);
 }
 
+// Track mouse movement, typing, clicks, and scrolling
 window.addEventListener("mousemove", updateActivity);
 window.addEventListener("click", updateActivity);
 window.addEventListener("keydown", updateActivity);
+window.addEventListener("scroll", updateActivity);
+
+// Initialize on page load
+updateActivity();
 
 
 /* =========================================================
@@ -605,6 +623,8 @@ function buildGallery() {
 
 // Public posts loaded from blog.json
 let blogs = [];
+
+localStorage.removeItem("blogs");
 
 // Private admin storage
 let archivedBlogs = JSON.parse(localStorage.getItem("archivedBlogs") || "[]");
@@ -770,6 +790,14 @@ function renderBlogs() {
       <div class="blog-body">
         ${b.text}
       </div>
+
+      ${
+        adminUnlocked && viewMode === "active"
+        ? `<button class="delete-btn" onclick="deletePost(${index})">
+            🗑 Delete
+           </button>`
+        : ""
+      }
 
     </div>
   `).join("");
@@ -957,6 +985,7 @@ function saveDraft() {
 ========================================================= */
 
 function saveBlogs() {
+  localStorage.setItem("blogs", JSON.stringify(blogs));
   localStorage.setItem("archivedBlogs", JSON.stringify(archivedBlogs));
   localStorage.setItem("trash", JSON.stringify(trash));
 }
@@ -1179,6 +1208,77 @@ player.addEventListener(
   "ended",
   playNextTrack
 );
+
+let history = []; // Keeps track of played songs so Prev button works properly
+
+function playNextTrack() {
+  if (!playlistReady || !player) return;
+
+  if (!started) {
+    buildQueue();
+    started = true;
+  }
+
+  if (queue.length === 0) {
+    buildQueue();
+  }
+
+  const next = queue.shift();
+  if (!next) return;
+
+  // Track history before playing new song
+  if (player.src) {
+    history.push(player.src);
+  }
+
+  player.src = next.file;
+  player.load();
+
+  if (audioCtx && audioCtx.state === "suspended") {
+    audioCtx.resume();
+  }
+
+  player.play()
+    .then(() => {
+      if (trackDisplay) trackDisplay.innerText = "Now Playing: " + next.name;
+      if (musicStatus) musicStatus.innerText = "Listening to " + next.name;
+    })
+    .catch((err) => {
+      console.warn("Autoplay / play error:", err);
+      if (musicStatus) musicStatus.innerText = "Press play again";
+    });
+}
+
+// ⏮ PREVIOUS SONG FUNCTION
+function previousSong(btn) {
+  if (btn) flash(btn);
+
+  // If track has been playing for more than 3 seconds, restart current track
+  if (player.currentTime > 3) {
+    player.currentTime = 0;
+    return;
+  }
+
+  // Otherwise go back to previous song if history exists
+  if (history.length > 0) {
+    const prevSrc = history.pop();
+    
+    // Find matching song info to update trackDisplay
+    const matchingSong = songs.find(s => s.file === prevSrc || prevSrc.includes(encodeURI(s.file)));
+    
+    player.src = prevSrc;
+    player.load();
+    player.play();
+
+    if (matchingSong) {
+      if (trackDisplay) trackDisplay.innerText = "Now Playing: " + matchingSong.name;
+      if (musicStatus) musicStatus.innerText = "Listening to " + matchingSong.name;
+    }
+  } else {
+    // If no history, just restart current track
+    player.currentTime = 0;
+  }
+}
 
 /* =========================
    SEEK BAR
