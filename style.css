@@ -1,0 +1,1224 @@
+/* =========================
+   ✨ BACKGROUND IMG
+========================= */
+
+.portal-bg {
+  position: fixed;
+  inset: 0;
+
+  background: url("background/chat.png") center center / cover no-repeat;
+
+  z-index: -5;
+
+  transform: scale(1.1);
+
+  animation: portalZoom 12s linear infinite;
+
+  will-change: transform;
+}
+
+/* =========================
+   🌈 HUE BORDER ANIMATION
+========================= */
+
+@keyframes borderHue {
+
+  0% {
+    border-color: #00ffff;
+    box-shadow:
+      0 0 8px #00ffff,
+      0 0 16px #00ffff44;
+  }
+
+  50% {
+    border-color: #ff00ff;
+    box-shadow:
+      0 0 8px #ff00ff,
+      0 0 16px #ff00ff44;
+  }
+
+  100% {
+    border-color: #00ffff;
+    box-shadow:
+      0 0 8px #00ffff,
+      0 0 16px #00ffff44;
+  }
+}
+
+/* =========================
+   ✨ STRONGER COSMIC SPARKLES
+========================= */
+
+.portal-bg::after {
+
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(circle, #ff004c 0px, transparent 3px),
+    radial-gradient(circle, #00f7ff 0px, transparent 4px),
+    radial-gradient(circle, #ffe600 0px, transparent 3px),
+    radial-gradient(circle, #7a00ff 0px, transparent 4px),
+    radial-gradient(circle, #00ff6a 0px, transparent 3px);
+
+  background-size:
+    120px 120px,
+    180px 180px,
+    240px 240px,
+    200px 200px,
+    260px 260px;
+
+  animation:
+    sparkleDrift 12s linear infinite,
+    sparkleFlash 3s ease-in-out infinite,
+    sparkleShift 6s linear infinite;
+
+  opacity: 0.9;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+@keyframes sparkleShift {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(180deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* drifting motion */
+@keyframes sparkleDrift {
+
+  from {
+    transform: translateY(0px);
+  }
+
+  to {
+    transform: translateY(-160px);
+  }
+}
+
+/* twinkling */
+@keyframes sparkleFlash {
+
+  0% {
+    opacity: 0.4;
+    filter: brightness(1);
+  }
+
+  50% {
+    opacity: 1;
+    filter: brightness(1.8);
+  }
+
+  100% {
+    opacity: 0.4;
+    filter: brightness(1);
+  }
+}
+
+/* =========================
+   PORTAL ZOOM
+========================= */
+
+@keyframes portalZoom {
+  0% {
+    transform: scale(1.05) translateY(0px);
+    filter: brightness(1);
+  }
+
+  50% {
+    transform: scale(1.25) translateY(-10px);
+    filter: brightness(1.2);
+  }
+
+  100% {
+    transform: scale(1.05) translateY(0px);
+    filter: brightness(1);
+  }
+}
+
+
+/* =========================
+   BACKGROUND DETAILS
+========================= */
+
+.portal-overlay {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle, transparent 40%, black 100%);
+  z-index: -4;
+  pointer-events: none;
+  animation: vignettePulse 8s ease-in-out infinite;
+}
+
+@keyframes vignettePulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 0.85; }
+  100% { opacity: 0.6; }
+}
+
+.streaks {
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    120deg,
+    transparent 0px,
+    rgba(255,255,255,0.05) 2px,
+    transparent 4px
+  );
+  animation: streakMove 1.5s linear infinite;
+  z-index: -3;
+  opacity: 0.3;
+}
+
+@keyframes streakMove {
+  from { transform: translateY(0); }
+  to { transform: translateY(80px); }
+}
+
+
+
+/* =========================
+   TITLE
+========================= */
+
+:root {
+  --accent: #0a06e8;
+  --accent-glow: #ff0000;
+}
+
+.site-title {
+  text-align: center;
+  font-size: 28px;
+  margin: 20px 0;
+  letter-spacing: 2px;
+
+  color: #fff;
+
+  /* glowing base */
+  text-shadow: 0 0 10px rgba(255,255,255,0.4);
+
+  /* hue animation */
+  animation: titleHue 5s linear infinite;
+}
+
+@keyframes titleHue {
+  0% {
+    filter: hue-rotate(0deg) drop-shadow(0 0 10px #ff004c);
+  }
+  25% {
+    filter: hue-rotate(90deg) drop-shadow(0 0 10px #000dbb);
+  }
+  50% {
+    filter: hue-rotate(180deg) drop-shadow(0 0 10px #ffe600);
+  }
+  75% {
+    filter: hue-rotate(270deg) drop-shadow(0 0 10px #cf029c);
+  }
+  100% {
+    filter: hue-rotate(360deg) drop-shadow(0 0 10px #ff004c);
+  }
+}
+
+/* =========================
+   BASE
+========================= */
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #000000, #050a05);
+  font-family: "Tahoma", "Arial", sans-serif;
+  color: #d0ffd0;
+  cursor: default;
+}
+
+a, button {
+  cursor: pointer;
+}
+
+
+
+
+/* =========================
+   🌌 CURSOR SYSTEM RESET
+========================= */
+
+body {
+  cursor: none;
+}
+
+/* =========================
+   🌌 CURSOR CONTAINER
+========================= */
+
+#space-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 90px;
+  height: 90px;
+
+  pointer-events: none;
+  z-index: 999999;
+
+  transform: translate(-50%, -50%);
+}
+
+/* =========================
+   🔴 MARS PLANET CORE
+========================= */
+
+.planet {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 30px;
+  height: 30px;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(circle at 30% 30%,
+      #ffb89a,
+      #ff5a36 40%,
+      #7a1a10 75%,
+      #2a0604 100%);
+
+  box-shadow:
+    0 0 12px rgba(255, 80, 40, 0.6),
+    0 0 22px rgba(255, 50, 20, 0.3);
+
+  z-index: 2;
+
+  animation: planetFloat 3s ease-in-out infinite;
+}
+
+/* =========================
+   🪐 OPTIONAL SATURN RING (REAL DEPTH)
+   (safe version — does NOT break planet)
+========================= */
+
+.planet::after {
+  content: "";
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 100px;
+  height: 36px;
+
+  transform: translate(-50%, -50%) rotate(-18deg);
+
+  border-radius: 50%;
+
+  /* soft glowing ring */
+  background: radial-gradient(ellipse at center,
+    rgba(255, 220, 180, 0.9) 0%,
+    rgba(255, 160, 110, 0.35) 35%,
+    rgba(255, 120, 80, 0.15) 55%,
+    transparent 75%);
+
+  /* glow bloom */
+  box-shadow:
+    0 0 10px rgba(255, 140, 90, 0.4),
+    0 0 20px rgba(255, 90, 40, 0.2);
+
+  filter: blur(0.8px);
+
+  opacity: 0.85;
+
+  z-index: -1;
+
+  pointer-events: none;
+
+  animation: ringFloat 4s ease-in-out infinite;
+}
+
+/* =========================
+   🌠 STAR TRAIL (CLEAN + STABLE)
+========================= */
+
+.cursor-star {
+  position: fixed;
+
+  width: 3px;
+  height: 3px;
+
+  border-radius: 50%;
+  pointer-events: none;
+
+  z-index: 999998;
+
+  background: white;
+
+  box-shadow:
+    0 0 6px white,
+    0 0 12px rgba(180,220,255,0.8);
+
+  animation: starFade 0.9s ease-out forwards;
+}
+
+/* =========================
+   ✨ ANIMATIONS
+========================= */
+
+@keyframes starFade {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+}
+
+@keyframes planetFloat {
+  0%
+
+}
+
+@keyframes ringFloat {
+  0% {
+    transform: translate(-50%, -50%) rotate(-18deg) scale(1);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: translate(-50%, -50%) rotate(-16deg) scale(1.05);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(-18deg) scale(1);
+    opacity: 0.7;
+  }
+}
+
+/* =========================
+   SITE TITLE
+========================= */
+
+.site-title {
+  text-align: center;
+  font-size: 28px;
+  margin: 20px 0;
+  color: var(--accent);
+  text-shadow: 0 0 10px var(--accent-glow);
+  letter-spacing: 2px;
+}
+
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  border-bottom: 1px solid #1a3d1a;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.top-link {
+  padding: 6px 12px;
+  color: #7CFF7C;
+  background: #001a00;
+  border: 1px solid #2aff2a;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.top-link:hover {
+  background: #003300;
+  color: #ffffff;
+}
+
+/* =========================
+   LAYOUT
+========================= */
+
+.page {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 15px;
+}
+
+.left {
+  width: 240px;
+}
+
+/* =========================
+   PROFILE BOX (UNCHANGED)
+========================= */
+
+.profile-box {
+  background: rgba(0, 4, 28, 0.367);
+  border: 1px solid #1aff1a;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* =========================
+   PROFILE BOX CONTAINER FIX (LAYERS STABILITY)
+========================= */
+
+.profile-box {
+  position: relative;
+  overflow: hidden;
+}
+
+/* =========================
+   PFP IMAGE
+========================= */
+
+.pfp {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 2;
+  border-radius: 12px;
+}
+
+/* =========================
+   PFP WRAPPER CORE
+========================= */
+
+.pfp-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-items: center;
+  overflow: visible;
+
+  --aura-size: 45px;
+}
+
+/* =========================================================
+   ⚡ PFP ELECTRIC SYSTEM (RESTORED + ORGANIZED)
+   - No changes to visuals, only structure cleanup
+========================================================= */
+
+
+/* =========================
+   🌈 YOUR ORIGINAL AURA (UNCHANGED CORE FEEL)
+========================= */
+
+.pfp-wrapper::before {
+  content: "";
+  position: absolute;
+
+  inset: calc(var(--aura-size) * -1);
+
+  background: conic-gradient(
+    from 0deg,
+    #ff0000,
+    #ff7a00,
+    #ffee00,
+    #00ff6a,
+    #00c8ff,
+    #7a00ff,
+    #ff00d4,
+    #ff0000
+  );
+
+  mask: radial-gradient(circle,
+    transparent 25%,
+    black 55%,
+    black 65%,
+    transparent 80%);
+
+  filter: blur(18px) contrast(2) saturate(2);
+  opacity: 0.9;
+  mix-blend-mode: screen;
+
+  animation:
+    auraSpin 11s linear infinite,
+    electricFlicker 0.18s infinite,
+    sparkBurst 1s infinite;
+
+  z-index: 0;
+}
+
+/* aura glow depth */
+.pfp-wrapper::before {
+  box-shadow:
+    0 0 10px #ff3b00,
+    0 0 20px #00f7ff,
+    0 0 30px #ffe600,
+    0 0 40px #b300ff;
+}
+
+
+
+/* =========================
+   ⚡ ELECTRIC BORDER RING
+========================= */
+
+.pfp-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  padding: 2px;
+
+  background: conic-gradient(
+    from 0deg,
+    #ff0000,
+    #ff7a00,
+    #ffee00,
+    #00ff6a,
+    #00c8ff,
+    #7a00ff,
+    #ff00d4,
+    #ff0000
+  );
+
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  filter: brightness(1.5) contrast(1.3);
+
+  animation:
+    borderSpin 1.4s linear infinite,
+    electricFlicker 0.55s infinite;
+
+  z-index: 3;
+  pointer-events: none;
+}
+
+
+/* =========================
+   ⚡ WRAPPER BASE RULE
+========================= */
+
+.pfp-wrapper {
+  overflow: visible;
+}
+
+/* spark glow enhancement */
+.pfp-wrapper::before {
+  box-shadow:
+    0 0 8px #ff004c,
+    0 0 12px #00f7ff,
+    0 0 16px #ffe600,
+    0 0 22px #b300ff;
+}
+
+/* =========================
+   ⚡ SPARK BURST EFFECT
+========================= */
+
+@keyframes sparkBurst {
+  0%   { opacity: 0.3; transform: translate(0px, 0px); }
+  25%  { opacity: 1;   transform: translate(2px, -2px); }
+  50%  { opacity: 0.5; transform: translate(-3px, 2px); }
+  75%  { opacity: 1;   transform: translate(3px, 3px); }
+  100% { opacity: 0.3; transform: translate(0px, 0px); }
+}
+
+
+/* =========================
+   ⚡ CORE ANIMATIONS
+========================= */
+
+@keyframes auraSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes electricFlicker {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+
+/* =========================
+   ⚡ ELECTRIC PARTICLE SYSTEM
+========================= */
+
+.electric-layer {
+  position: absolute;
+  inset: -40px;
+  pointer-events: none;
+  z-index: 2;
+  mix-blend-mode: screen;
+}
+
+/* drifting plasma particles */
+.electric-layer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(circle at 20% 30%, #ffffff 0 2px, transparent 4px),
+    radial-gradient(circle at 60% 20%, #00f7ff 0 2px, transparent 5px),
+    radial-gradient(circle at 40% 70%, #ff004c 0 2px, transparent 4px),
+    radial-gradient(circle at 80% 60%, #ffe600 0 2px, transparent 5px),
+    radial-gradient(circle at 30% 90%, #7a00ff 0 2px, transparent 6px);
+
+  filter: blur(0.6px);
+  opacity: 0.8;
+
+  animation: plasmaDrift 2.5s linear infinite;
+}
+
+/* floating motion */
+@keyframes plasmaDrift {
+  0%   { transform: translate(0px, 0px); }
+  25%  { transform: translate(3px, -2px); }
+  50%  { transform: translate(-2px, 3px); }
+  75%  { transform: translate(2px, 2px); }
+  100% { transform: translate(0px, 0px); }
+}
+
+
+/* =========================
+   ⚡ PARTICLES (BASE DRIFT)
+========================= */
+
+.electric-layer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(circle at 20% 30%, #ffffff 0 2px, transparent 4px),
+    radial-gradient(circle at 60% 20%, #00f7ff 0 2px, transparent 5px),
+    radial-gradient(circle at 40% 70%, #ff004c 0 2px, transparent 4px),
+    radial-gradient(circle at 80% 60%, #ffe600 0 2px, transparent 5px),
+    radial-gradient(circle at 30% 90%, #7a00ff 0 2px, transparent 6px);
+
+  filter: blur(0.6px);
+  opacity: 0.8;
+
+  animation: plasmaDrift 7s linear infinite;
+}
+
+@keyframes plasmaDrift {
+  0%   { transform: translate(0px, 0px); }
+  25%  { transform: translate(3px, -2px); }
+  50%  { transform: translate(-2px, 3px); }
+  75%  { transform: translate(2px, 2px); }
+  100% { transform: translate(0px, 0px); }
+}
+
+
+/* =========================
+   ⚡ LIGHTNING BOLT HOVER FIELD (NO SPIN)
+========================= */
+
+.pfp-wrapper:hover .electric-layer::after {
+  content: "";
+  position: absolute;
+  inset: -70px;
+  pointer-events: none;
+
+  /* REAL “bolt-like” geometry */
+  background:
+    linear-gradient(115deg, transparent 45%, #00f7ff 50%, transparent 55%),
+    linear-gradient(240deg, transparent 45%, #ff004c 50%, transparent 55%),
+    linear-gradient(60deg, transparent 45%, #ffe600 50%, transparent 55%),
+    linear-gradient(300deg, transparent 45%, #7a00ff 50%, transparent 55%);
+
+  background-size: 60px 60px;
+  background-position: 0 0;
+
+  filter:
+    blur(0.6px)
+    drop-shadow(0 0 6px #00f7ff)
+    drop-shadow(0 0 10px #ff004c);
+
+  opacity: 0.9;
+
+  mix-blend-mode: screen;
+
+  /* IMPORTANT: no rotation */
+  animation: boltFlicker 0.12s infinite, boltShift 1.2s infinite linear;
+}
+
+/* flickering electricity instability */
+@keyframes boltFlicker {
+  0%   { opacity: 0.4; filter: hue-rotate(0deg); }
+  25%  { opacity: 1;   filter: hue-rotate(90deg); }
+  50%  { opacity: 0.6; filter: hue-rotate(180deg); }
+  75%  { opacity: 1;   filter: hue-rotate(270deg); }
+  100% { opacity: 0.4; filter: hue-rotate(360deg); }
+}
+
+/* subtle drift ONLY (not spin) */
+@keyframes boltShift {
+  0%   { transform: translate(0px, 0px); }
+  25%  { transform: translate(1px, -2px); }
+  50%  { transform: translate(-2px, 1px); }
+  75%  { transform: translate(2px, 2px); }
+  100% { transform: translate(0px, 0px); }
+}
+
+/* =========================
+   ⚡ HOVER EFFECTS
+========================= */
+
+.pfp-wrapper:hover::before {
+  animation:
+    auraSpin 2s linear infinite,
+    electricFlicker 2s infinite,
+    sparkBurst 0.6s infinite;
+}
+
+/* sharper flicker on hover */
+@keyframes sparkBurst {
+  0%   { filter: blur(18px) hue-rotate(0deg); opacity: 0.4; }
+  25%  { filter: blur(20px) hue-rotate(90deg); opacity: 1; }
+  50%  { filter: blur(16px) hue-rotate(180deg); opacity: 0.6; }
+  75%  { filter: blur(22px) hue-rotate(270deg); opacity: 1; }
+  100% { filter: blur(18px) hue-rotate(360deg); opacity: 0.4; }
+}
+
+/* =========================
+   ⚡ OPTIONAL: “STATIC FIRE EDGE” FEEL
+========================= */
+
+.pfp-wrapper:hover {
+  transform: scale(1.02);
+  transition: 0.2s ease;
+}
+
+/* =========================
+   ⚡ ELECTRIC FIRE PARTICLE SYSTEM (FIXED CLEAN VERSION)
+   SAFE ADD-ON — does NOT touch aura or border
+========================= */
+
+/* IMPORTANT: ensure stacking works correctly */
+.pfp-wrapper {
+  position: relative;
+  overflow: visible;
+}
+
+/* =========================
+   ⚡ PARTICLE LAYER (NEW SAFE SYSTEM)
+========================= */
+
+.electric-layer {
+  position: absolute;
+  inset: -60px;
+  pointer-events: none;
+  z-index: 2;
+  mix-blend-mode: screen;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+/* activate only on hover */
+.pfp-wrapper:hover .electric-layer {
+  opacity: 1;
+}
+
+/* floating electric dust */
+.electric-layer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(circle at 20% 30%, #00f7ff 0 2px, transparent 5px),
+    radial-gradient(circle at 60% 20%, #ff004c 0 2px, transparent 5px),
+    radial-gradient(circle at 40% 70%, #ffe600 0 2px, transparent 5px),
+    radial-gradient(circle at 80% 60%, #7a00ff 0 2px, transparent 6px);
+
+  filter: blur(0.6px) brightness(1.5);
+  animation: electricDrift 2s linear infinite;
+}
+
+/* =========================
+   ⚡ LIGHTNING BURST LAYER (NO SPIN)
+========================= */
+
+.electric-layer::after {
+  content: "";
+  position: absolute;
+  inset: -40px;
+
+  background:
+    linear-gradient(120deg, transparent 45%, #00f7ff 50%, transparent 55%),
+    linear-gradient(240deg, transparent 45%, #ff004c 50%, transparent 55%),
+    linear-gradient(60deg, transparent 45%, #ffe600 50%, transparent 55%);
+
+  background-size: 80px 80px;
+
+  filter:
+    drop-shadow(0 0 6px #00f7ff)
+    drop-shadow(0 0 10px #ff004c);
+
+  opacity: 0;
+  mix-blend-mode: screen;
+  animation: none;
+}
+
+/* only appear on hover */
+.pfp-wrapper:hover .electric-layer::after {
+  opacity: 1;
+  animation: boltFlicker 0.12s infinite, boltJitter 0.6s infinite;
+}
+
+/* =========================
+   ⚡ SUPPORT ANIMATIONS
+========================= */
+
+@keyframes electricDrift {
+  0% { transform: translate(0px, 0px); }
+  50% { transform: translate(2px, -2px); }
+  100% { transform: translate(0px, 0px); }
+}
+
+@keyframes boltFlicker {
+  0% { opacity: 0.3; }
+  50% { opacity: 1; }
+  100% { opacity: 0.4; }
+}
+
+@keyframes boltJitter {
+  0% { transform: translate(0px, 0px); }
+  25% { transform: translate(2px, -2px); }
+  50% { transform: translate(-2px, 2px); }
+  75% { transform: translate(2px, 2px); }
+  100% { transform: translate(0px, 0px); }
+}
+
+
+/* =========================
+   ⚡ SUPPORT ANIMATIONS
+========================= */
+
+@keyframes electricDrift {
+  0% { transform: translate(0px, 0px); }
+  50% { transform: translate(2px, -2px); }
+  100% { transform: translate(0px, 0px); }
+}
+
+@keyframes boltFlicker {
+  0% { opacity: 0.3; }
+  50% { opacity: 1; }
+  100% { opacity: 0.4; }
+}
+
+@keyframes boltJitter {
+  0% { transform: translate(0px, 0px); }
+  25% { transform: translate(2px, -2px); }
+  50% { transform: translate(-2px, 2px); }
+  75% { transform: translate(2px, 2px); }
+  100% { transform: translate(0px, 0px); }
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+#statusDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: gray;
+}
+
+
+
+/* =========================
+   XP PLAYER
+========================= */
+
+.xp-player {
+  width: 340px;
+  background: rgba(0, 10, 0, 0.9);
+  border: 1px solid #1aff1a;
+  box-shadow: 0 0 15px rgba(0,255,0,0.2);
+}
+
+.xp-titlebar {
+  background: linear-gradient(90deg, #003300, #00ff66);
+  color: black;
+  padding: 8px;
+  font-weight: bold;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+button {
+  background: #002200;
+  color: #7CFF7C;
+  border: 1px solid #39ff14;
+  padding: 6px 10px;
+  margin: 3px;
+}
+
+button:hover {
+  background: #003300;
+  color: white;
+}
+
+button.active {
+  background: var(--accent);
+  color: black;
+}
+
+/* =========================
+   POPUP WINDOWS
+========================= */
+
+.popup-window {
+  display: none;
+  position: absolute;
+  top: 100px;
+  left: 100px;
+
+  width: 420px;
+  height: 320px;
+
+  background: #000;
+  border: 2px solid #39ff14;
+  z-index: 9999;
+
+  resize: both;
+  overflow: auto;
+
+  min-width: 300px;
+  min-height: 200px;
+}
+
+/* =========================
+   TITLEBAR (DRAG HANDLE)
+========================= */
+
+.popup-titlebar {
+  background: linear-gradient(90deg, #003300, #00ff66);
+  color: rgb(0, 0, 0);
+
+  padding: 6px 10px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  cursor: grab;
+  user-select: none;
+}
+
+.popup-titlebar:active {
+  cursor: grabbing;
+}
+
+/* =========================
+   CONTENT AREA
+========================= */
+
+.popup-content {
+  padding: 10px;
+  height: calc(100% - 30px);
+  overflow-y: auto;
+}
+
+/* =========================
+   LIGHTBOX
+========================= */
+
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+}
+
+.lightbox img,
+.lightbox video {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+/* =========================
+   RADIO
+========================= */
+
+.live-status {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+/* =========================
+   GALLERY
+========================= */
+
+.popup-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 10px;
+}
+
+.popup-grid img,
+.popup-grid video {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  background: black;
+  border: 1px solid #ff00ff44;
+  cursor: pointer;
+}
+
+/* =========================
+   MUSIC FOOTER
+========================= */
+
+.visualizer-footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  padding-top: 6px;
+  font-size: 11px;
+  opacity: 0.85;
+}
+
+#seekBar {
+  flex: 1;
+  height: 3px;
+  accent-color: var(--accent);
+}
+
+/* =========================
+   BLOG
+========================= */
+
+.blog-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.blog-body {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.blog-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.admin-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+  border: 1px solid #444;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+#blogFeed {
+  overflow-y: auto;
+  max-height: 350px;
+}
+
+#blogWindow {
+  width: 650px;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#blogWindow .popup-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* =========================
+   TASKBAR
+========================= */
+
+#taskbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  height: 40px;
+  background: rgba(0,0,0,0.7);
+
+  display: flex;
+  gap: 6px;
+  padding: 5px;
+}
+
+
+/* =========================
+   🌈 BORDER ANIMATION ONLY
+========================= */
+
+.popup-window,
+.profile-box,
+.xp-player,
+button,
+.top-link,
+.popup-titlebar {
+  animation: borderHue 6s linear infinite;
+}
+
+
+/* =========================
+   BUTTONS (SAFE)
+========================= */
+
+button {
+  background: #001a00;
+  color: #7CFF7C;
+  border: 1px solid #39ff14;
+  padding: 6px 10px;
+
+  transition: 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px cyan;
+}
+

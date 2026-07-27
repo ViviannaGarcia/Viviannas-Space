@@ -1,0 +1,14 @@
+[
+  {
+    "type": "image",
+    "src": "gallery/pic1.jpg"
+  },
+  {
+    "type": "image",
+    "src": "gallery/pic2.jpg"
+  },
+  {
+    "type": "video",
+    "src": "gallery/video1.mp4"
+  }
+]
