@@ -1405,20 +1405,37 @@ h1, h2, h3, .box-title, .xp-titlebar {
 }
 
 /* ======================================================= */
-/* SOLID BLACK POPUP WINDOW BACKGROUNDS                    */
+/* RESPONSIVE MOBILE & DESKTOP ADJUSTMENTS                 */
 /* ======================================================= */
 
-.popup-window {
-  background-color: #000000 !important;
-  border: 2px solid #00ffcc !important;
-}
+/* Styles specifically for mobile phones (screens 768px wide or smaller) */
+@media screen and (max-width: 768px) {
+  
+  /* Make popup windows fit nicely on phone screens instead of overflowing */
+  .popup-window {
+    width: 92vw !important;
+    left: 4vw !important;
+    top: 100px !important;
+    height: 380px !important;
+  }
 
-.popup-content {
-  background-color: #000000 !important;
-  color: #00ffcc !important;
-}
+  /* Pull up your main layout columns so things don't get trapped at the bottom */
+  body {
+    padding: 10px !important;
+  }
 
-.popup-titlebar {
-  background: linear-gradient(90deg, #ff007f, #7000ff) !important;
-  color: #ffffff !important;
+  /* Force your main profile containers to stack vertically and center on mobile */
+  .profile-container, .main-content, .blog-layout {
+    width: 100% !important;
+    margin: 0 auto !important;
+    float: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  /* Fix gallery grid spacing on small mobile screens */
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr) !important; /* 2 columns instead of crowding */
+    gap: 8px !important;
+  }
 }
