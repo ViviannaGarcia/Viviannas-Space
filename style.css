@@ -1439,3 +1439,57 @@ h1, h2, h3, .box-title, .xp-titlebar {
     gap: 8px !important;
   }
 }
+
+/* Sets the inner background of all popup windows to black and text to light/retro styling */
+.popup-window, .popup-content {
+  background-color: #000000 !important;
+  color: #00ff00 !important; /* Change this if you prefer white text (#ffffff) */
+}
+
+/* If your blog posts or list text need specific color adjustments */
+.blog-post, .popup-content p, .popup-content h3 {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+
+/* =========================
+   RETRO BLOG POST STYLING
+========================= */
+.blog-layout {
+  background-color: #000000;
+  color: #00ff00; /* Neon green terminal vibe, change to #ffffff for pure white text */
+  font-family: monospace, sans-serif;
+  padding: 15px;
+}
+
+.blog-post-header {
+  border-bottom: 1px dashed #444;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+  font-size: 0.85em;
+  color: #888;
+  display: flex;
+  justify-content: space-between;
+}
+
+.blog-post-body h4 {
+  color: #ff00ff; /* Retro hot pink title */
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.blog-post-body p {
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.blog-post-footer {
+  border-top: 1px dashed #444;
+  padding-top: 8px;
+  margin-top: 15px;
+  font-size: 0.8em;
+  display: flex;
+  justify-content: space-between;
+  color: #00ffff; /* Retro cyan accent */
+}

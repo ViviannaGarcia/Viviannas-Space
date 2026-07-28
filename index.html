@@ -178,10 +178,10 @@
     </div>
   </div>
 
-  <div class="popup-content blog-layout">
-    <h3>July 27, 2026</h3>
-    <p>Welcome To Vivianna's Space! My first blog post on my digital universe 🌌.</p>
-  </div>
+  <div id="blog-container" class="popup-content blog-layout">
+    </div>
+
+</div>
 
 </div>
 </div> <div id="galleryWindow" class="popup-window" style="display:none;">
@@ -258,92 +258,85 @@
    GLOBAL UI CONTROLS (Gallery + Radio Windows)
 ========================================================= */
 
+/* =========================================================
+   SMART WINDOW CONTROLS (OPENS, CLOSES, & SYNC TASKBAR)
+========================================================= */
+
 /* ---------- Gallery Window ---------- */
-
-let currentIndex = 0;
-
 function openGallery() {
-  const win = document.getElementById("galleryWindow");
-  if (!win) return;
-
-  win.style.display = "block";
-  win.classList.remove("minimized");
+  restoreWindow("galleryWindow", "Gallery");
 }
 
 function closeGallery() {
-  const win = document.getElementById("galleryWindow");
-  if (!win) return;
-  win.style.display = "none";
-}
-
-function closeAllWindowsExcept(id) {
-  ["galleryWindow", "blogWindow", "radioWindow"].forEach(winId => {
-    if (winId !== id) {
-      const w = document.getElementById(winId);
-      if (w) w.style.display = "none";
-    }
-  });
+  hideWindowToTaskbar("galleryWindow", "Gallery", false); // false means closed, not minimized to taskbar
 }
 
 /* ---------- Radio Window ---------- */
 function openRadio() {
-  document.getElementById("radioWindow").style.display = "block";
+  restoreWindow("radioWindow", "Radio");
 }
 
 function closeRadio() {
-  document.getElementById("radioWindow").style.display = "none";
+  hideWindowToTaskbar("radioWindow", "Radio", false);
 }
 
+/* ---------- Blog Window ---------- */
+function openBlog() {
+  restoreWindow("blogWindow", "Blog");
+  showActive(); // Keeps your posts tab active
+}
 
+function closeBlog() {
+  hideWindowToTaskbar("blogWindow", "Blog", false);
+}
 
-/* =========================
-   WINDOW FOCUS SYSTEM
-========================= */
-
-let topWindow = 100;
-
-document.querySelectorAll(".popup-window").forEach(win => {
-
-  win.addEventListener("mousedown", () => {
-
-    topWindow++;
-
-    win.style.zIndex = topWindow;
-  });
-
-});
-
-
-
-///////////////////////////////////////////////////////////////
-// TASKBAR WINDOW SYSTEM
-///////////////////////////////////////////////////////////////
+/* =========================================================
+   TASKBAR & WINDOW ENGINE (FIXES DUPLICATES & BUTTON SYNC)
+========================================================= */
 
 const taskbar = document.getElementById("taskbar");
 
+// Minimizes a window and adds/keeps its taskbar button
 function minimizeToTaskbar(id, label) {
-
   const win = document.getElementById(id);
   if (!win) return;
 
   win.style.display = "none";
 
+  // Prevent duplicate taskbar buttons
+  if (document.getElementById("task_" + id)) return;
+
   const btn = document.createElement("button");
   btn.innerText = label;
   btn.id = "task_" + id;
-
-  btn.onclick = () => restoreWindow(id);
+  btn.onclick = () => restoreWindow(id, label);
 
   taskbar.appendChild(btn);
 }
 
-function restoreWindow(id) {
-
+// Hides a window (used by close buttons or normal hides) and clears taskbar button if closed completely
+function hideWindowToTaskbar(id, label, isMinimized) {
   const win = document.getElementById(id);
   if (!win) return;
 
-  win.style.display = "block";
+  win.style.display = "none";
 
+  // If it's closed via 'X', remove the taskbar button entirely
+  const btn = document.getElementById("task_" + id);
+  if (btn) btn.remove();
+}
+
+// Restores a window from anywhere (Top nav bar OR clicking its taskbar button)
+function restoreWindow(id, label) {
+  const win = document.getElementById(id);
+  if (!win) return;
+
+  // Show window and bring to front
+  win.style.display = "block";
+  topWindow++;
+  win.style.zIndex = topWindow;
+
+  // Clear the taskbar button since the window is now open on your screen
   const btn = document.getElementById("task_" + id);
   if (btn) btn.remove();
 }
@@ -666,29 +659,6 @@ async function loadBlogs() {
   } catch (error) {
     console.error("Blog loading error:", error);
   }
-}
-
-/* =========================================================
-   BLOG OPEN / CLOSE
-========================================================= */
-
-function openBlog() {
-
-  const win = document.getElementById("blogWindow");
-
-  if (!win) return;
-
-  // OPEN BLOG WINDOW
-  win.style.display = "block";
-
-  // OPEN POSTS TAB
-  showActive();
-}
-
-function closeBlog() {
-  const win = document.getElementById("blogWindow");
-  if (!win) return;
-  win.style.display = "none";
 }
 
 
@@ -1516,6 +1486,50 @@ function draw() {
 
 draw();
 
+
+
+
+/* =========================================================
+   DYNAMIC BLOG LOADER FROM blog.json
+========================================================= */
+function loadBlogPosts() {
+  fetch('blog.json')
+    .then(response => response.json())
+    .then(posts => {
+      const container = document.getElementById('blog-container');
+      if (!container) return;
+
+      // Clear whatever is currently in there
+      container.innerHTML = '';
+
+      // Loop through each post in your blog.json and create the HTML structure
+      posts.forEach(post => {
+        const postHTML = `
+          <div class="blog-post-header">
+            <span class="blog-date">${post.date}</span>
+            <span class="blog-author">${post.author}</span>
+          </div>
+
+          <div class="blog-post-body">
+            <h4>${post.title}</h4>
+            <p>${post.body}</p>
+          </div>
+
+          <div class="blog-post-footer">
+            <span class="mood">Mood: ${post.mood}</span>
+          </div>
+          <hr style="border: 0; border-top: 1px dashed #333; margin: 15px 0;">
+        `;
+        container.innerHTML += postHTML;
+      });
+    })
+    .catch(error => console.error('Error loading blog posts:', error));
+}
+
+// Run the loader when your page opens
+window.addEventListener('DOMContentLoaded', () => {
+  loadBlogPosts();
+});
 
 </script>
 

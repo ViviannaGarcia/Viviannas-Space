@@ -1,7 +1,9 @@
 [
   {
-    "title": "Welcome To Vivianna's Space",
-    "text": "My first blog post on my digital universe 🌌",
-    "date": "July 27, 2026"
+    "date": "July 27, 2026",
+    "author": "Posted by Vivianna",
+    "title": "Welcome To Vivianna's Space! 🌌",
+    "body": "My first blog post on my digital universe.✨",
+    "mood": "nostalgic"
   }
 ]
