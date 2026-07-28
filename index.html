@@ -166,21 +166,53 @@
 </div> ```
 
 <!-- =========================
-     BLOG WINDOW
+     POPUP WINDOWS
 ========================= -->
 <div id="blogWindow" class="popup-window" style="display:none;">
-
-  <!-- TITLEBAR -->
+  
   <div class="popup-titlebar blog-titlebar">
-    
     <span class="title">BLOG</span>
-
     <div class="window-controls">
       <button onclick="minimizeToTaskbar('blogWindow','Blog')">_</button>
       <button onclick="closeBlog()">X</button>
     </div>
-
   </div>
+
+  <div class="popup-content blog-layout">
+    <h3>July 27, 2026</h3>
+    <p>Welcome To Vivianna's Space! My first blog post on my digital universe 🌌.</p>
+  </div>
+
+</div>
+</div> <div id="galleryWindow" class="popup-window" style="display:none;">
+  <div class="popup-titlebar gallery-titlebar">
+    <span class="title">GALLERY</span>
+    <div class="window-controls">
+      <button onclick="minimizeToTaskbar('galleryWindow','Gallery')">_</button>
+      <button onclick="closeGallery()">X</button>
+    </div>
+  </div>
+  <div class="popup-content">
+    <div id="galleryGrid" class="gallery-grid"></div>
+  </div>
+</div>
+
+<div id="radioWindow" class="popup-window" style="display:none;">
+  <div class="popup-titlebar">
+    <span class="title">RADIO STREAM</span>
+    <div class="window-controls">
+      <button onclick="minimizeToTaskbar('radioWindow','Radio')">_</button>
+      <button onclick="closeRadio()">X</button>
+    </div>
+  </div>
+  <div class="popup-content" style="padding: 15px; text-align: center;">
+    <p id="liveStatus" style="font-weight: bold; color: gray;">● OFF AIR</p>
+    <audio id="radioStream" preload="none"></audio>
+    <p style="font-size: 12px; color: #666; margin-top: 10px;">SOULLWAVVEE radio going live.</p>
+  </div>
+</div>
+
+
   
 <!-- BLOG CONTENT -->
 <div class="popup-content blog-layout">
