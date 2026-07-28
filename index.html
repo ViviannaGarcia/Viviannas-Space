@@ -12,1311 +12,913 @@
   <div class="portal-bg"></div>
   
 
-  <!-- =========================
-       HEADER
-  ========================= -->
   <h1 class="site-title">Vivianna's Space</h1>
 
-  <!-- =========================
-       TOP NAV BAR
-  ========================= -->
   <div class="topbar">
     <span class="top-link" onclick="openGallery()">Gallery</span>
     <span class="top-link" onclick="openRadio()">Radio</span>
     <span class="top-link" onclick="openBlog()">Blog</span>
   </div>
-<!-- =========================
-     MAIN PAGE LAYOUT
-========================= -->
-<div class="page">
 
-  <!-- =========================
-       LEFT SIDEBAR
-  ========================= -->
-<div class="left">
 
-  <div class="profile-box">
-    <div class="pfp-wrapper">
-      <img src="images/ProfilePic.jpeg" class="pfp">
-    </div> 
-    <div class="electric-layer"></div>
+  <div class="page">
 
-    <h3>Vivianna</h3>
+    <div class="left">
 
-    <div class="status">
-      <span id="statusDot"></span>
-      <span id="statusText">Offline</span>
-    </div>
-  </div>
+      <div class="profile-box">
+        <div class="pfp-wrapper">
+          <img src="images/ProfilePic.jpeg" class="pfp">
+        </div> 
+        <div class="electric-layer"></div>
 
-  <div class="profile-box about-me-box">
-    <h3 class="box-title">✨ About Me</h3>
-    
-    <div class="profile-details">
-      <div class="profile-pic-container">
-        <img src="images/ABOUT ME.png" alt="Profile Picture" class="profile-pic">
-      </div>
-      
-      <div class="profile-info">
-        <p class="headline">"Welcome to my space! ⚡ nostalqia & qood vibes only 🎧"</p>
-        
-        <ul class="bio-details-list">
-          <li><strong>Name:</strong> Vivianna</li>
-          <li><strong>Age:</strong> Forever 21</li>
-          <li><strong>Status:</strong> Creating cool web stuff✨</li>
-          <li><strong>Mood:</strong> Nostalqic🌀</li>
-          <li><strong>Location:</strong> Cyberspace🌐</li>
-        </ul>
+        <h3>Vivianna</h3>
 
-        <div class="bio-text">
-          <p>
-            Hey! Welcome to my personal my-space. I love music, art, creatinq, and 2000s web aesthetics. This paqe is still under construction. Feel free to leave a note in my questbook!
-          </p>
+        <div class="status">
+          <span id="statusDot"></span>
+          <span id="statusText">Offline</span>
         </div>
       </div>
+
+      <div class="profile-box about-me-box">
+        <h3 class="box-title">✨ About Me</h3>
+        
+        <div class="profile-details">
+          <div class="profile-pic-container">
+            <img src="images/ABOUT ME.png" alt="Profile Picture" class="profile-pic">
+          </div>
+          
+          <div class="profile-info">
+            <p class="headline">"Welcome to my space! ⚡ nostalqia & qood vibes only 🎧"</p>
+            
+            <ul class="bio-details-list">
+              <li><strong>Name:</strong> Vivianna</li>
+              <li><strong>Age:</strong> Forever 21</li>
+              <li><strong>Status:</strong> Creating cool web stuff✨</li>
+              <li><strong>Mood:</strong> Nostalqic🌀</li>
+              <li><strong>Location:</strong> Cyberspace🌐</li>
+            </ul>
+
+            <div class="bio-text">
+              <p>
+                Hey! Welcome to my personal my-space. I love music, art, creatinq, and 2000s web aesthetics. This paqe is still under construction. Feel free to leave a note in my questbook!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-box">
+        <h3 class="box-title">🐾 My Top friends</h3>
+        <div class="top8-grid">
+          <div class="pet-card">
+            <img src="images/pet1.jpg" alt="Pet 1">
+            <p>Rose 🐶</p>
+          </div>
+          <div class="pet-card">
+            <img src="images/pet2.jpg" alt="Pet 2">
+            <p>Nila 🐱</p>
+          </div>
+          <div class="pet-card">
+            <img src="images/pet3.jpg" alt="Pet 3">
+            <p>Dash 🐱</p>
+          </div>
+          <div class="pet-card">
+            <img src="images/pet4.jpg" alt="Pet 4">
+            <p>Rocket 🐶</p>
+          </div>
+          <div class="pet-card">
+            <img src="images/pet5.jpg" alt="Pet 5">
+            <p>Groot 🐶</p>
+          </div>
+          <div class="pet-card">
+            <img src="images/pet6.jpg" alt="Pet 6">
+            <p>Kevin 🦜</p>
+          </div>
+          <div class="pet-card">
+            <img src="images/pet7.jpg" alt="Pet 7">
+            <p>Hammy Sosa 🐹</p>
+          </div>
+        </div>
+      </div>
+
+    </div> 
+
+    <div class="right">
+
+      <div class="xp-player"> 
+        <div class="xp-titlebar">
+          🎵 SOULLWAVVEE PLAYER
+        </div>
+
+        <div class="xp-content">
+          <audio id="player"></audio>
+
+          <canvas id="visualizer"></canvas>
+
+          <div class="track-display" id="trackDisplay">
+            No song playing
+          </div>
+
+          <div id="musicStatus" style="font-size: 11px; color: #888; text-align: center; margin-bottom: 5px;">
+            Loading playlist...
+          </div>
+
+          <div class="controls">
+            <button onclick="togglePlay(this)">⏯ Play / Pause</button>
+            <button onclick="previousSong(this)">⏮ Prev</button>
+            <button onclick="nextSong(this)">⏭ Next</button>
+          </div>
+
+          <div class="visualizer-footer">
+            <span id="currentTime">0:00</span>
+            <input type="range" id="seekBar" value="0" min="0" max="100">
+            <span id="duration">0:00</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-box guestbook-box" style="margin-top: 15px;">
+        <h3 class="box-title" style="color: #ff00ff; margin-top: 0;">💬 Anonymous Guestbook</h3>
+        
+        <div id="cusdis_thread"
+          data-host="https://cusdis.com"
+          data-app-id="7b608cee-abea-4691-a109-8eb269583f41"
+          data-page-id="homepage"
+          data-page-url="https://viviannagarcia.github.io/Viviannas-Space/"
+          data-page-title="Vivianna's Space Guestbook"
+        ></div>
+
+        <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+      </div>
+
+    </div> 
+
+  </div>
+
+
+  <div id="blogWindow" class="popup-window" style="display:none;">
+    <div class="popup-titlebar blog-titlebar">
+      <span class="title">BLOG</span>
+      <div class="window-controls">
+        <button onclick="minimizeToTaskbar('blogWindow','Blog')">_</button>
+        <button onclick="closeBlog()">X</button>
+      </div>
+    </div>
+    <div id="blog-container" class="popup-content blog-layout">
+      </div>
+  </div>
+
+  <div id="galleryWindow" class="popup-window" style="display:none;">
+    <div class="popup-titlebar gallery-titlebar">
+      <span class="title">GALLERY</span>
+      <div class="window-controls">
+        <button onclick="minimizeToTaskbar('galleryWindow','Gallery')">_</button>
+        <button onclick="closeGallery()">X</button>
+      </div>
+    </div>
+    <div class="popup-content">
+      <div id="galleryGrid" class="gallery-grid"></div>
     </div>
   </div>
 
-  <div class="profile-box">
-    <h3 class="box-title">🐾 My Top friends</h3>
-    <div class="top8-grid">
-      <div class="pet-card">
-        <img src="images/pet1.jpg" alt="Pet 1">
-        <p>Rose 🐶</p>
+  <div id="radioWindow" class="popup-window" style="display:none;">
+    <div class="popup-titlebar">
+      <span class="title">RADIO STREAM</span>
+      <div class="window-controls">
+        <button onclick="minimizeToTaskbar('radioWindow','Radio')">_</button>
+        <button onclick="closeRadio()">X</button>
       </div>
-      <div class="pet-card">
-        <img src="images/pet2.jpg" alt="Pet 2">
-        <p>Nila 🐱</p>
-      </div>
-      <div class="pet-card">
-        <img src="images/pet3.jpg" alt="Pet 3">
-        <p>Dash 🐱</p>
-      </div>
-      <div class="pet-card">
-        <img src="images/pet4.jpg" alt="Pet 4">
-        <p>Rocket 🐶</p>
-      </div>
-      <div class="pet-card">
-        <img src="images/pet5.jpg" alt="Pet 5">
-        <p>Groot 🐶</p>
-      </div>
-      <div class="pet-card">
-        <img src="images/pet6.jpg" alt="Pet 6">
-        <p>Kevin 🦜</p>
-      </div>
-      <div class="pet-card">
-        <img src="images/pet7.jpg" alt="Pet 7">
-        <p>Hammy Sosa 🐹</p>
-      </div>
+    </div>
+    <div class="popup-content" style="padding: 15px; text-align: center;">
+      <p id="liveStatus" style="font-weight: bold; color: gray;">● OFF AIR</p>
+      <audio id="radioStream" preload="none"></audio>
+      <p style="font-size: 12px; color: #666; margin-top: 10px;">SOULLWAVVEE radio going live.</p>
     </div>
   </div>
 
-
-  <!-- =========================
-       RIGHT COLUMN (FIXED)
-  ========================= -->
-</div> <div class="right">
-
-  <div class="xp-player"> 
-    <div class="xp-titlebar">
-      🎵 SOULLWAVVEE PLAYER
-    </div>
-
-    <div class="xp-content">
-      <audio id="player"></audio>
-
-      <canvas id="visualizer"></canvas>
-
-      <div class="track-display" id="trackDisplay">
-        No song playing
-      </div>
-
-      <div id="musicStatus" style="font-size: 11px; color: #888; text-align: center; margin-bottom: 5px;">
-        Loading playlist...
-      </div>
-
-      <div class="controls">
-        <button onclick="togglePlay(this)">⏯ Play / Pause</button>
-        <button onclick="previousSong(this)">⏮ Prev</button>
-        <button onclick="nextSong(this)">⏭ Next</button>
-      </div>
-
-      <div class="visualizer-footer">
-        <span id="currentTime">0:00</span>
-        <input type="range" id="seekBar" value="0" min="0" max="100">
-        <span id="duration">0:00</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="profile-box guestbook-box" style="margin-top: 15px;">
-    <h3 class="box-title" style="color: #ff00ff; margin-top: 0;">💬 Anonymous Guestbook</h3>
-    
-    <div id="cusdis_thread"
-      data-host="https://cusdis.com"
-      data-app-id="7b608cee-abea-4691-a109-8eb269583f41"
-      data-page-id="homepage"
-      data-page-url="https://viviannagarcia.github.io/Viviannas-Space/"
-      data-page-title="Vivianna's Space Guestbook"
-    ></div>
-
-    <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
-  </div>
-
-</div> ```
-
-<!-- =========================
-     POPUP WINDOWS
-========================= -->
-<div id="blogWindow" class="popup-window" style="display:none;">
-  
-  <div class="popup-titlebar blog-titlebar">
-    <span class="title">BLOG</span>
-    <div class="window-controls">
-      <button onclick="minimizeToTaskbar('blogWindow','Blog')">_</button>
-      <button onclick="closeBlog()">X</button>
-    </div>
-  </div>
-
-  <div id="blog-container" class="popup-content blog-layout">
-    </div>
-
-</div>
-
-</div>
-</div> <div id="galleryWindow" class="popup-window" style="display:none;">
-  <div class="popup-titlebar gallery-titlebar">
-    <span class="title">GALLERY</span>
-    <div class="window-controls">
-      <button onclick="minimizeToTaskbar('galleryWindow','Gallery')">_</button>
-      <button onclick="closeGallery()">X</button>
-    </div>
-  </div>
-  <div class="popup-content">
-    <div id="galleryGrid" class="gallery-grid"></div>
-  </div>
-</div>
-
-<div id="radioWindow" class="popup-window" style="display:none;">
-  <div class="popup-titlebar">
-    <span class="title">RADIO STREAM</span>
-    <div class="window-controls">
-      <button onclick="minimizeToTaskbar('radioWindow','Radio')">_</button>
-      <button onclick="closeRadio()">X</button>
-    </div>
-  </div>
-  <div class="popup-content" style="padding: 15px; text-align: center;">
-    <p id="liveStatus" style="font-weight: bold; color: gray;">● OFF AIR</p>
-    <audio id="radioStream" preload="none"></audio>
-    <p style="font-size: 12px; color: #666; margin-top: 10px;">SOULLWAVVEE radio going live.</p>
-  </div>
-</div>
-
-
-  <!-- RIGHT SIDE: TEXTBOX PANEL (ONLY ONE) -->
   <div id="textboxPanel" style="display:none;" class="admin-panel">
-
     <input id="blogTitle" placeholder="Title..." />
-
     <textarea id="blogText" placeholder="Write your post..."></textarea>
-
     <input type="datetime-local" id="scheduleTime" />
-
     <div class="admin-buttons">
       <button onclick="preparePost()">Create Post</button>
       <button onclick="saveDraft()">Save Draft</button>
       <button onclick="schedulePost()">Schedule Post</button>
     </div>
-
   </div>
 
-</div>
 
-</div>
-  <!-- =========================
-       LIGHTBOX
-  ========================= -->
   <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
     <div id="lightboxContent"></div>
   </div>
 
+  <div id="taskbar"></div>
+
+  <div id="space-cursor">
+    <div class="planet"></div>
+  </div>
 
 
-<div id="taskbar"></div>
 
-
-
-</body>
-</html>
-
-  <!-- =========================
-       JAVASCRIPT
-  ========================= -->
   <script>
 
   /* =========================================================
-   GLOBAL UI CONTROLS (Gallery + Radio Windows)
-========================================================= */
+     A. WINDOW CONTROLS & TASKBAR ENGINE
+  ========================================================= */
 
-/* =========================================================
-   SMART WINDOW CONTROLS (OPENS, CLOSES, & SYNC TASKBAR)
-========================================================= */
-
-/* ---------- Gallery Window ---------- */
-function openGallery() {
-  restoreWindow("galleryWindow", "Gallery");
-}
-
-function closeGallery() {
-  hideWindowToTaskbar("galleryWindow", "Gallery", false); // false means closed, not minimized to taskbar
-}
-
-/* ---------- Radio Window ---------- */
-function openRadio() {
-  restoreWindow("radioWindow", "Radio");
-}
-
-function closeRadio() {
-  hideWindowToTaskbar("radioWindow", "Radio", false);
-}
-
-/* ---------- Blog Window ---------- */
-function openBlog() {
-  restoreWindow("blogWindow", "Blog");
-  showActive(); // Keeps your posts tab active
-}
-
-function closeBlog() {
-  hideWindowToTaskbar("blogWindow", "Blog", false);
-}
-
-/* =========================================================
-   TASKBAR & WINDOW ENGINE (FIXES DUPLICATES & BUTTON SYNC)
-========================================================= */
-
-const taskbar = document.getElementById("taskbar");
-
-// Minimizes a window and adds/keeps its taskbar button
-function minimizeToTaskbar(id, label) {
-  const win = document.getElementById(id);
-  if (!win) return;
-
-  win.style.display = "none";
-
-  // Prevent duplicate taskbar buttons
-  if (document.getElementById("task_" + id)) return;
-
-  const btn = document.createElement("button");
-  btn.innerText = label;
-  btn.id = "task_" + id;
-  btn.onclick = () => restoreWindow(id, label);
-
-  taskbar.appendChild(btn);
-}
-
-// Hides a window (used by close buttons or normal hides) and clears taskbar button if closed completely
-function hideWindowToTaskbar(id, label, isMinimized) {
-  const win = document.getElementById(id);
-  if (!win) return;
-
-  win.style.display = "none";
-
-  // If it's closed via 'X', remove the taskbar button entirely
-  const btn = document.getElementById("task_" + id);
-  if (btn) btn.remove();
-}
-
-// Restores a window from anywhere (Top nav bar OR clicking its taskbar button)
-function restoreWindow(id, label) {
-  const win = document.getElementById(id);
-  if (!win) return;
-
-  // Show window and bring to front
-  win.style.display = "block";
-  topWindow++;
-  win.style.zIndex = topWindow;
-
-  // Clear the taskbar button since the window is now open on your screen
-  const btn = document.getElementById("task_" + id);
-  if (btn) btn.remove();
-}
-
-
-/* =========================
-   📁 GALLERY STATE
-========================= */
-/* =========================
-   🪟 LIGHTBOX OPEN (IMAGE / VIDEO)
-========================= */
-
-function openMedia(index) {
-  const item = galleryData[index];
-  currentIndex = index;
-
-  const lightbox = document.getElementById("lightbox");
-  const content = document.getElementById("lightboxContent");
-
-  lightbox.style.display = "flex";
-
-  // IMAGE
-  if (item.type === "image") {
-    content.innerHTML = `<img src="${item.src}" />`;
+  function openGallery() {
+    restoreWindow("galleryWindow", "Gallery");
   }
 
-  // VIDEO
-  else if (item.type === "video") {
-    content.innerHTML = `
-      <video src="${item.src}" controls autoplay></video>
-    `;
-  }
-}
-
-
-/* =========================
-   ❌ LIGHTBOX CLOSE
-========================= */
-
-function closeLightbox(e) {
-  if (e.target.id === "lightbox") {
-    document.getElementById("lightbox").style.display = "none";
-    document.getElementById("lightboxContent").innerHTML = "";
-  }
-}
-
-
-/* =========================
-   ⬅️➡️ NAVIGATION
-========================= */
-
-function showMedia(index) {
-  if (index < 0) index = galleryData.length - 1;
-  if (index >= galleryData.length) index = 0;
-
-  currentIndex = index;
-  openMedia(currentIndex);
-}
-
-
-/* =========================
-   ⌨️ KEYBOARD CONTROLS
-========================= */
-
-document.addEventListener("keydown", (e) => {
-  const lightbox = document.getElementById("lightbox");
-
-  if (lightbox.style.display !== "flex") return;
-
-  if (e.key === "ArrowRight") {
-    showMedia(currentIndex + 1);
+  function closeGallery() {
+    hideWindowToTaskbar("galleryWindow", "Gallery", false); 
   }
 
-  if (e.key === "ArrowLeft") {
-    showMedia(currentIndex - 1);
+  function openRadio() {
+    restoreWindow("radioWindow", "Radio");
   }
 
-  if (e.key === "Escape") {
-    lightbox.style.display = "none";
-    document.getElementById("lightboxContent").innerHTML = "";
+  function closeRadio() {
+    hideWindowToTaskbar("radioWindow", "Radio", false);
   }
-});
 
-/* =========================================================
-   THEME SYSTEM
-========================================================= */
-
-function randomizeTheme() {
-  const hue = Math.floor(Math.random() * 360);
-
-  document.documentElement.style.setProperty("--accent", `hsl(${hue},100%,60%)`);
-  document.documentElement.style.setProperty("--accent-glow", `hsl(${(hue + 40) % 360},100%,65%)`);
-}
-
-function flash(btn) {
-  if (!btn) return;
-  btn.classList.add("active");
-
-  setTimeout(() => btn.classList.remove("active"), 250);
-}
-
-
-
-
-/* =========================================================
-   STATUS SYSTEM (10-SECOND IDLE TIMEOUT)
-========================================================= */
-
-const statusDot = document.getElementById("statusDot");
-const statusText = document.getElementById("statusText");
-
-const IDLE_TIMEOUT = 10000; // 10 seconds
-let idleTimer = null;
-
-function setOnline() {
-  if (statusDot) statusDot.style.background = "lime";
-  if (statusText) statusText.innerText = "Online";
-}
-
-function setAway() {
-  if (statusDot) statusDot.style.background = "gray";
-  if (statusText) statusText.innerText = "Away";
-}
-
-function updateActivity() {
-  setOnline();
-  clearTimeout(idleTimer);
-  idleTimer = setTimeout(setAway, IDLE_TIMEOUT);
-}
-
-// Track mouse movement, typing, clicks, and scrolling
-window.addEventListener("mousemove", updateActivity);
-window.addEventListener("click", updateActivity);
-window.addEventListener("keydown", updateActivity);
-window.addEventListener("scroll", updateActivity);
-
-// Initialize on page load
-updateActivity();
-
-
-/* =========================================================
-   RADIO SYSTEM
-========================================================= */
-
-const radio = document.getElementById("radioStream");
-const liveStatus = document.getElementById("liveStatus");
-
-function setLive() {
-  liveStatus.textContent = "● LIVE";
-  liveStatus.style.color = "red";
-}
-
-function setOffAir() {
-  liveStatus.textContent = "● OFF AIR";
-  liveStatus.style.color = "gray";
-}
-
-function setBuffering() {
-  liveStatus.textContent = "● BUFFERING...";
-  liveStatus.style.color = "orange";
-}
-
-radio?.addEventListener("playing", setLive);
-radio?.addEventListener("pause", setOffAir);
-radio?.addEventListener("waiting", setBuffering);
-radio?.addEventListener("stalled", setBuffering);
-
-
-/* =========================================================
-   RADIO DRAG 
-========================================================= */
-
-const radioWindow = document.getElementById("radioWindow");
-const titleBar = radioWindow?.querySelector(".popup-titlebar");
-
-let isDragging = false;
-let offsetX = 0;
-let offsetY = 0;
-
-titleBar?.addEventListener("mousedown", (e) => {
-  isDragging = true;
-  offsetX = e.clientX - radioWindow.offsetLeft;
-  offsetY = e.clientY - radioWindow.offsetTop;
-});
-
-document.addEventListener("mousemove", (e) => {
-  if (!isDragging) return;
-  radioWindow.style.left = (e.clientX - offsetX) + "px";
-  radioWindow.style.top = (e.clientY - offsetY) + "px";
-});
-
-document.addEventListener("mouseup", () => {
-  isDragging = false;
-});
-
-
-/* =========================
-   GALLERY DRAG 
-========================= */
-
-let galleryWindow = document.getElementById("galleryWindow");
-let galleryTitleBar = galleryWindow?.querySelector(".popup-titlebar");
-
-let galleryDragging = false;
-let galleryOffsetX = 0;
-let galleryOffsetY = 0;
-
-if (galleryWindow && galleryTitleBar) {
-
-  galleryTitleBar.style.cursor = "grab";
-
-  galleryTitleBar.addEventListener("mousedown", (e) => {
-    galleryDragging = true;
-
-    const rect = galleryWindow.getBoundingClientRect();
-
-    galleryOffsetX = e.clientX - rect.left;
-    galleryOffsetY = e.clientY - rect.top;
-
-    galleryTitleBar.style.cursor = "grabbing";
-  });
-
-  document.addEventListener("mousemove", (e) => {
-    if (!galleryDragging) return;
-
-    galleryWindow.style.position = "absolute";
-    galleryWindow.style.left = (e.clientX - galleryOffsetX) + "px";
-    galleryWindow.style.top = (e.clientY - galleryOffsetY) + "px";
-  });
-
-  document.addEventListener("mouseup", () => {
-    galleryDragging = false;
-    galleryTitleBar.style.cursor = "grab";
-  });
-
-}
-
-/* =========================
-   AUTO GALLERY LOADER (JSON)
-========================= */
-
-const galleryGrid = document.getElementById("galleryGrid");
-let galleryData = [];
-
-fetch("gallery.json")
-  .then(res => res.json())
-  .then(data => {
-    galleryData = data;
-    buildGallery();
-  })
-  .catch(err => {
-    console.error("Gallery failed to load:", err);
-  });
-
-function buildGallery() {
-  galleryGrid.innerHTML = "";
-
-  galleryData.forEach((item, index) => {
-
-    const wrapper = document.createElement("div");
-    wrapper.className = "gallery-item";
-
-    if (item.type === "image") {
-      const img = document.createElement("img");
-      img.src = item.src;
-      img.onclick = () => openMedia(index);
-      wrapper.appendChild(img);
-    }
-
-    if (item.type === "video") {
-      const vid = document.createElement("video");
-      vid.src = item.src;
-      vid.muted = true;
-      vid.onclick = () => openMedia(index);
-      wrapper.appendChild(vid);
-    }
-
-    galleryGrid.appendChild(wrapper);
-  });
-}
-
-
-/* =========================================================
-   BLOG SYSTEM (STATE)
-========================================================= */
-
-// Public posts loaded from blog.json
-let blogs = [];
-
-localStorage.removeItem("blogs");
-
-// Private admin storage
-let archivedBlogs = JSON.parse(localStorage.getItem("archivedBlogs") || "[]");
-let trash = JSON.parse(localStorage.getItem("trash") || "[]");
-let drafts = JSON.parse(localStorage.getItem("drafts") || "[]");
-let scheduledPosts = JSON.parse(localStorage.getItem("scheduledPosts") || "[]");
-
-let viewMode = "active";
-let adminUnlocked = false;
-
-const draftKey = "blogDraft";
-
-
-/* =========================================================
-   LOAD PUBLIC BLOG POSTS
-========================================================= */
-
-async function loadBlogs() {
-  try {
-    const response = await fetch("blog.json");
-
-    if (!response.ok) {
-      throw new Error("blog.json could not be loaded");
-    }
-
-    blogs = await response.json();
-
-    renderBlogs();
-
-  } catch (error) {
-    console.error("Blog loading error:", error);
+  function openBlog() {
+    restoreWindow("blogWindow", "Blog");
+    if (typeof showActive === 'function') showActive(); 
   }
-}
 
+  function closeBlog() {
+    hideWindowToTaskbar("blogWindow", "Blog", false);
+  }
 
-/* =========================
-   BLOG DRAG
-========================= */
+  const taskbar = document.getElementById("taskbar");
 
-const blogWindow = document.getElementById("blogWindow");
-const blogTitleBar = blogWindow?.querySelector(".popup-titlebar");
+  function minimizeToTaskbar(id, label) {
+    const win = document.getElementById(id);
+    if (!win) return;
 
-let blogDragging = false;
-let blogOffsetX = 0;
-let blogOffsetY = 0;
+    win.style.display = "none";
 
-if (blogWindow && blogTitleBar) {
+    if (document.getElementById("task_" + id)) return;
 
-  blogTitleBar.style.cursor = "grab";
+    const btn = document.createElement("button");
+    btn.innerText = label;
+    btn.id = "task_" + id;
+    btn.onclick = () => restoreWindow(id, label);
 
-  blogTitleBar.addEventListener("mousedown", (e) => {
+    taskbar.appendChild(btn);
+  }
 
-    blogDragging = true;
+  function hideWindowToTaskbar(id, label, isMinimized) {
+    const win = document.getElementById(id);
+    if (!win) return;
 
-    const rect = blogWindow.getBoundingClientRect();
+    win.style.display = "none";
 
-    blogOffsetX = e.clientX - rect.left;
-    blogOffsetY = e.clientY - rect.top;
+    const btn = document.getElementById("task_" + id);
+    if (btn) btn.remove();
+  }
 
-    blogTitleBar.style.cursor = "grabbing";
+  function restoreWindow(id, label) {
+    const win = document.getElementById(id);
+    if (!win) return;
 
-    bringToFront(blogWindow);
-  });
+    win.style.display = "block";
+    topWindow++;
+    win.style.zIndex = topWindow;
 
-  document.addEventListener("mousemove", (e) => {
+    const btn = document.getElementById("task_" + id);
+    if (btn) btn.remove();
+  }
 
-    if (!blogDragging) return;
-
-    blogWindow.style.position = "absolute";
-
-    blogWindow.style.left =
-      (e.clientX - blogOffsetX) + "px";
-
-    blogWindow.style.top =
-      (e.clientY - blogOffsetY) + "px";
-  });
-
-  document.addEventListener("mouseup", () => {
-
-    blogDragging = false;
-
-    blogTitleBar.style.cursor = "grab";
-  });
-}
-
-/* =========================================================
-   CREATE + POST SYSTEM
-========================================================= */
-
-function postBlog() {
-  const titleEl = document.getElementById("blogTitle");
-  const textEl = document.getElementById("blogText");
-
-  if (!titleEl || !textEl) return;
-
-  const text = textEl.value;
-  const title = titleEl.value;
-
-  if (!text.trim()) return;
-
-  blogs.unshift({
-    title: title || "Untitled",
-    text,
-    date: new Date().toLocaleString()
-  });
-
-  saveBlogs();
-
-  titleEl.value = "";
-  textEl.value = "";
-
-  renderBlogs();
-  localStorage.removeItem("blogDraft");
-}
-
-
-/* =========================================================
-   RENDER BLOGS
-========================================================= */
-
-function renderBlogs() {
-  const feed = document.getElementById("blogFeed");
-  if (!feed) return;
-
-  let data = blogs;
-
-  if (viewMode === "archived") data = archivedBlogs;
-  if (viewMode === "trash") data = trash;
-  if (viewMode === "drafts") data = drafts;
-  if (viewMode === "scheduled") data = scheduledPosts;
-
-  feed.innerHTML = data.map((b, index) => `
-    <div class="blog-post">
-
-      <div class="blog-header">
-        <span>${b.title}</span>
-        <span>${b.date || b.time || ""}</span>
-      </div>
-
-      <div class="blog-body">
-        ${b.text}
-      </div>
-
-      ${
-        adminUnlocked && viewMode === "active"
-        ? `<button class="delete-btn" onclick="deletePost(${index})">
-            🗑 Delete
-           </button>`
-        : ""
+  function closeAllWindowsExcept(id) {
+    ["galleryWindow", "blogWindow", "radioWindow"].forEach(winId => {
+      if (winId !== id) {
+        const w = document.getElementById(winId);
+        if (w) w.style.display = "none";
       }
-
-    </div>
-  `).join("");
-}
-
-
-/* =========================================================
-   VIEW SWITCHING (FIXED RESET SYSTEM)
-========================================================= */
-
-function hidePanels() {
-  document.getElementById("blogFeed").style.display = "block";
-  document.getElementById("textboxPanel").style.display = "none";
-}
-
-function showActive() {
-  viewMode = "active";
-  hidePanels();
-  renderBlogs();
-}
-
-function showArchived() {
-  viewMode = "archived";
-  hidePanels();
-  renderBlogs();
-}
-
-function showTrash() {
-  viewMode = "trash";
-  hidePanels();
-  renderBlogs();
-}
-
-function showDrafts() {
-  viewMode = "drafts";
-  hidePanels();
-  renderBlogs();
-}
-
-function showScheduled() {
-  viewMode = "scheduled";
-  hidePanels();
-  renderBlogs();
-}
-
-
-/* =========================================================
-   ✅ TEXTBOX TAB (FIXED — THIS WAS YOUR MAIN BUG)
-========================================================= */
-
-function showTextboxTab() {
-  viewMode = "textbox";
-
-  document.getElementById("blogFeed").style.display = "none";
-  document.getElementById("textboxPanel").style.display = "flex";
-}
-
-/* =========================================================
-   ADMIN UNLOCK (FIXED SCOPING ISSUE)
-========================================================= */
-
-function unlockBlogAdmin() {
-  const code = prompt("Enter admin code:");
-
-  if (code === "ikeepmysecretssafewithme123") {
-
-    adminUnlocked = true;
-
-    document.querySelectorAll(".admin-only").forEach(btn => {
-      btn.style.display = "inline-block";
     });
-
-    showTextboxTab(); // open ONLY textbox tab
-    renderBlogs();
   }
-}
 
 
-/* =========================================================
-   ACTIONS (UNCHANGED LOGIC KEPT SAFE)
-========================================================= */
+  /* =========================================================
+     B. WINDOW FOCUS (Z-INDEX LAYERING) SYSTEM
+  ========================================================= */
 
-function archivePost(index) {
-  const post = blogs.splice(index, 1)[0];
-  if (!post) return;
+  let topWindow = 100; 
 
-  archivedBlogs.unshift(post);
-  saveBlogs();
-  renderBlogs();
-}
-
-function deletePost(index) {
-  const post = blogs.splice(index, 1)[0];
-  if (!post) return;
-
-  trash.unshift(post);
-  saveBlogs();
-  renderBlogs();
-}
-
-function restorePost(index) {
-  const post = archivedBlogs.splice(index, 1)[0];
-  if (!post) return;
-
-  blogs.unshift(post);
-  saveBlogs();
-  renderBlogs();
-}
-
-function restoreFromTrash(index) {
-  const post = trash.splice(index, 1)[0];
-  if (!post) return;
-
-  blogs.unshift(post);
-  saveBlogs();
-  renderBlogs();
-}
-
-function permaDelete(index) {
-  if (!confirm("Delete forever?")) return;
-
-  trash.splice(index, 1);
-  saveBlogs();
-  renderBlogs();
-}
-
-
-/* =========================================================
-   SCHEDULING SYSTEM (UNCHANGED)
-========================================================= */
-
-function schedulePost() {
-  const title = document.getElementById("blogTitle").value;
-  const text = document.getElementById("blogText").value;
-  const time = document.getElementById("scheduleTime").value;
-
-  if (!text.trim() || !time) return;
-
-  scheduledPosts.push({ title, text, time });
-
-  localStorage.setItem("scheduledPosts", JSON.stringify(scheduledPosts));
-
-  alert("Post scheduled ⏳");
-
-  document.getElementById("blogTitle").value = "";
-  document.getElementById("blogText").value = "";
-  document.getElementById("scheduleTime").value = "";
-}
-
-
-/* =========================================================
-   DRAFT SYSTEM (UNCHANGED)
-========================================================= */
-
-function saveDraft() {
-  const titleEl = document.getElementById("blogTitle");
-  const textEl = document.getElementById("blogText");
-
-  const title = titleEl.value;
-  const text = textEl.value;
-
-  if (!text.trim() && !title.trim()) return;
-
-  const draft = {
-    title: title || "Untitled",
-    text,
-    date: new Date().toLocaleString()
-  };
-
-  // add to in-memory array
-  drafts.unshift(draft);
-
-  // save correctly under SAME key you load from
-  localStorage.setItem("drafts", JSON.stringify(drafts));
-
-  // optional: clear inputs after saving
-  titleEl.value = "";
-  textEl.value = "";
-
-  alert("Draft saved ✏️");
-}
-
-/* =========================================================
-   SAVE BLOGS
-========================================================= */
-
-function saveBlogs() {
-  localStorage.setItem("blogs", JSON.stringify(blogs));
-  localStorage.setItem("archivedBlogs", JSON.stringify(archivedBlogs));
-  localStorage.setItem("trash", JSON.stringify(trash));
-}
-
-/* =========================================================
-   EXPORT SYSTEM
-========================================================= */
-function exportBlogPost(){
-
-    const publicBlog = {
-        title,
-        text,
-        date
-    };
-
-    // creates downloadable blog.json update
-}
-
-loadBlogs();
-
-/* =========================================================
-   GLOBAL PATCH
-========================================================= */
-
-window.showDrafts = window.showDrafts || showDrafts;
-window.showTrash = window.showTrash || showTrash;
-
-  </script>
-  
-  
-<!-- =========================
-     3D SPACE CURSOR
-========================= -->
-
-<div id="space-cursor">
-  <div class="planet"></div>
-</div>
-
-<script>
-const cursor = document.getElementById("space-cursor");
-
-let mouseX = 0;
-let mouseY = 0;
-
-let currentX = 0;
-let currentY = 0;
-
-document.addEventListener("mousemove", (e) => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-
-  spawnStar(mouseX, mouseY);
-  spawnStar(mouseX, mouseY);
-  spawnStar(mouseX, mouseY);
-  spawnStar(mouseX, mouseY);
-});
-
-function animate() {
-  currentX += (mouseX - currentX) * 0.2;
-  currentY += (mouseY - currentY) * 0.2;
-
-  cursor.style.transform =
-    `translate(${currentX}px, ${currentY}px) translate(-50%, -50%)`;
-
-  requestAnimationFrame(animate);
-}
-animate();
-
-/* STAR TRAIL (separate from cursor — IMPORTANT) */
-function spawnStar(x, y) {
-  const star = document.createElement("div");
-  star.className = "cursor-star";
-
-  const size = Math.random() * 3 + 1.5;
-
-  star.style.width = size + "px";
-  star.style.height = size + "px";
-
-  star.style.left = x + (Math.random() - 0.5) * 10 + "px";
-  star.style.top = y + (Math.random() - 0.5) * 10 + "px";
-
-  document.body.appendChild(star);
-
-  setTimeout(() => star.remove(), 900);
-}
-
-
-/* =========================================================
-   MUSIC PLAYER SYSTEM
-========================================================= */
-
-const player = document.getElementById("player");
-const trackDisplay = document.getElementById("trackDisplay");
-const musicStatus = document.getElementById("musicStatus");
-
-let songs = [];
-let queue = [];
-let started = false;
-let playlistReady = false;
-
-fetch("mymusic.json")
-  .then(res => res.json())
-  .then(data => {
-
-    songs = data;
-
-    buildQueue();
-
-    playlistReady = true;
-
-    musicStatus.innerText =
-      `Playlist (${songs.length} songs) 🎧`;
-  })
-  .catch(err => {
-
-    console.error(err);
-
-    musicStatus.innerText =
-      "Playlist failed to load";
+  document.querySelectorAll(".popup-window").forEach(win => {
+    win.addEventListener("mousedown", () => {
+      topWindow++;
+      win.style.zIndex = topWindow;
+    });
   });
 
-function shuffle(arr) {
 
-  const copy = [...arr];
+  /* =========================================================
+     C. LIGHTBOX & GALLERY ENGINE
+  ========================================================= */
 
-  for (let i = copy.length - 1; i > 0; i--) {
+  let currentIndex = 0; 
 
-    const j =
-      Math.floor(Math.random() * (i + 1));
+  function openMedia(index) {
+    const item = galleryData[index];
+    currentIndex = index;
 
-    [copy[i], copy[j]] =
-      [copy[j], copy[i]];
-  }
+    const lightbox = document.getElementById("lightbox");
+    const content = document.getElementById("lightboxContent");
 
-  return copy;
-}
+    if (lightbox) lightbox.style.display = "flex";
 
-function buildQueue() {
-  queue = shuffle(songs);
-}
-
-function playNextTrack() {
-
-  if (!playlistReady) return;
-
-  if (!started) {
-
-    buildQueue();
-
-    started = true;
-  }
-
-  if (queue.length === 0) {
-    buildQueue();
-  }
-
-  const next = queue.shift();
-
-  if (!next) return;
-
-  player.src = next.file;
-
-  player.load();
-
-  if (audioCtx.state === "suspended") {
-    audioCtx.resume();
-  }
-
-  player.play()
-    .then(() => {
-
-      trackDisplay.innerText =
-        "Now Playing: " + next.name;
-
-      musicStatus.innerText =
-        "Listening to " + next.name;
-    })
-    .catch(() => {
-
-      musicStatus.innerText =
-        "Press play again";
-    });
-}
-
-function togglePlay(btn) {
-
-  flash(btn);
-
-  if (!audioUnlocked) {
-
-    audioCtx.resume();
-
-    audioUnlocked = true;
-  }
-
-  if (!player.src) {
-
-    playNextTrack();
-
-    return;
-  }
-
-  if (player.paused) {
-    player.play();
-  } else {
-    player.pause();
-  }
-}
-
-function nextSong(btn) {
-
-  flash(btn);
-
-  randomizeTheme();
-
-  playNextTrack();
-}
-
-player.addEventListener(
-  "ended",
-  playNextTrack
-);
-
-let history = []; // Keeps track of played songs so Prev button works properly
-
-function playNextTrack() {
-  if (!playlistReady || !player) return;
-
-  if (!started) {
-    buildQueue();
-    started = true;
-  }
-
-  if (queue.length === 0) {
-    buildQueue();
-  }
-
-  const next = queue.shift();
-  if (!next) return;
-
-  // Track history before playing new song
-  if (player.src) {
-    history.push(player.src);
-  }
-
-  player.src = next.file;
-  player.load();
-
-  if (audioCtx && audioCtx.state === "suspended") {
-    audioCtx.resume();
-  }
-
-  player.play()
-    .then(() => {
-      if (trackDisplay) trackDisplay.innerText = "Now Playing: " + next.name;
-      if (musicStatus) musicStatus.innerText = "Listening to " + next.name;
-    })
-    .catch((err) => {
-      console.warn("Autoplay / play error:", err);
-      if (musicStatus) musicStatus.innerText = "Press play again";
-    });
-}
-
-// ⏮ PREVIOUS SONG FUNCTION
-function previousSong(btn) {
-  if (btn) flash(btn);
-
-  // If track has been playing for more than 3 seconds, restart current track
-  if (player.currentTime > 3) {
-    player.currentTime = 0;
-    return;
-  }
-
-  // Otherwise go back to previous song if history exists
-  if (history.length > 0) {
-    const prevSrc = history.pop();
-    
-    // Find matching song info to update trackDisplay
-    const matchingSong = songs.find(s => s.file === prevSrc || prevSrc.includes(encodeURI(s.file)));
-    
-    player.src = prevSrc;
-    player.load();
-    player.play();
-
-    if (matchingSong) {
-      if (trackDisplay) trackDisplay.innerText = "Now Playing: " + matchingSong.name;
-      if (musicStatus) musicStatus.innerText = "Listening to " + matchingSong.name;
+    if (item && item.type === "image") {
+      content.innerHTML = `<img src="${item.src}" />`;
+    } else if (item && item.type === "video") {
+      content.innerHTML = `<video src="${item.src}" controls autoplay></video>`;
     }
-  } else {
-    // If no history, just restart current track
-    player.currentTime = 0;
   }
-}
 
-/* =========================
-   SEEK BAR
-========================= */
-
-const seekBar =
-  document.getElementById("seekBar");
-
-const currentTimeEl =
-  document.getElementById("currentTime");
-
-const durationEl =
-  document.getElementById("duration");
-
-player.addEventListener(
-  "loadedmetadata",
-  () => {
-
-    seekBar.max =
-      Math.floor(player.duration);
-
-    durationEl.textContent =
-      formatTime(player.duration);
+  function closeLightbox(e) {
+    if (e.target.id === "lightbox") {
+      document.getElementById("lightbox").style.display = "none";
+      document.getElementById("lightboxContent").innerHTML = "";
+    }
   }
-);
 
-player.addEventListener(
-  "timeupdate",
-  () => {
+  function showMedia(index) {
+    if (!galleryData) return;
+    if (index < 0) index = galleryData.length - 1;
+    if (index >= galleryData.length) index = 0;
 
-    seekBar.value =
-      Math.floor(player.currentTime);
-
-    currentTimeEl.textContent =
-      formatTime(player.currentTime);
+    currentIndex = index;
+    openMedia(currentIndex);
   }
-);
 
-seekBar.addEventListener(
-  "input",
-  () => {
+  document.addEventListener("keydown", (e) => {
+    const lightbox = document.getElementById("lightbox");
+    if (!lightbox || lightbox.style.display !== "flex") return;
 
-    player.currentTime =
-      seekBar.value;
+    if (e.key === "ArrowRight") showMedia(currentIndex + 1);
+    if (e.key === "ArrowLeft") showMedia(currentIndex - 1);
+    if (e.key === "Escape") {
+      lightbox.style.display = "none";
+      document.getElementById("lightboxContent").innerHTML = "";
+    }
+  });
+
+
+  /* =========================================================
+     D. THEME & USER STATUS SYSTEMS
+  ========================================================= */
+
+  function randomizeTheme() {
+    const hue = Math.floor(Math.random() * 360);
+    document.documentElement.style.setProperty("--accent", `hsl(${hue},100%,60%)`);
+    document.documentElement.style.setProperty("--accent-glow", `hsl(${(hue + 40) % 360},100%,65%)`);
   }
-);
 
-function formatTime(sec) {
+  function flash(btn) {
+    if (!btn) return;
+    btn.classList.add("active");
+    setTimeout(() => btn.classList.remove("active"), 250);
+  }
 
-  const m =
-    Math.floor(sec / 60);
+  const statusDot = document.getElementById("statusDot");
+  const statusText = document.getElementById("statusText");
+  const IDLE_TIMEOUT = 10000; 
+  let idleTimer = null;
 
-  const s =
-    Math.floor(sec % 60)
-      .toString()
-      .padStart(2, "0");
+  function setOnline() {
+    if (statusDot) statusDot.style.background = "lime";
+    if (statusText) statusText.innerText = "Online";
+  }
 
-  return `${m}:${s}`;
-}
+  function setAway() {
+    if (statusDot) statusDot.style.background = "gray";
+    if (statusText) statusText.innerText = "Away";
+  }
+
+  function updateActivity() {
+    setOnline();
+    clearTimeout(idleTimer);
+    idleTimer = setTimeout(setAway, IDLE_TIMEOUT);
+  }
+
+  window.addEventListener("mousemove", updateActivity);
+  window.addEventListener("click", updateActivity);
+  window.addEventListener("keydown", updateActivity);
+  window.addEventListener("scroll", updateActivity);
+  updateActivity();
+
+
+  /* =========================================================
+     E. RADIO & WINDOW DRAGGING ENGINE
+  ========================================================= */
+
+  const radio = document.getElementById("radioStream");
+  const liveStatus = document.getElementById("liveStatus");
+
+  function setLive() {
+    if (liveStatus) { liveStatus.textContent = "● LIVE"; liveStatus.style.color = "red"; }
+  }
+  function setOffAir() {
+    if (liveStatus) { liveStatus.textContent = "● OFF AIR"; liveStatus.style.color = "gray"; }
+  }
+  function setBuffering() {
+    if (liveStatus) { liveStatus.textContent = "● BUFFERING..."; liveStatus.style.color = "orange"; }
+  }
+
+  radio?.addEventListener("playing", setLive);
+  radio?.addEventListener("pause", setOffAir);
+  radio?.addEventListener("waiting", setBuffering);
+  radio?.addEventListener("stalled", setBuffering);
+
+  /* Radio Dragging */
+  const radioWindow = document.getElementById("radioWindow");
+  const radioTitleBar = radioWindow?.querySelector(".popup-titlebar");
+  let radioDragging = false, radioOffsetX = 0, radioOffsetY = 0;
+
+  radioTitleBar?.addEventListener("mousedown", (e) => {
+    radioDragging = true;
+    radioOffsetX = e.clientX - radioWindow.offsetLeft;
+    radioOffsetY = e.clientY - radioWindow.offsetTop;
+  });
+
+  document.addEventListener("mousemove", (e) => {
+    if (!radioDragging) return;
+    radioWindow.style.left = (e.clientX - radioOffsetX) + "px";
+    radioWindow.style.top = (e.clientY - radioOffsetY) + "px";
+  });
+
+  document.addEventListener("mouseup", () => { radioDragging = false; });
+
+  /* Gallery Dragging */
+  const galleryWindow = document.getElementById("galleryWindow");
+  const galleryTitleBar = galleryWindow?.querySelector(".popup-titlebar");
+  let galleryDragging = false, galleryOffsetX = 0, galleryOffsetY = 0;
+
+  if (galleryWindow && galleryTitleBar) {
+    galleryTitleBar.style.cursor = "grab";
+    galleryTitleBar.addEventListener("mousedown", (e) => {
+      galleryDragging = true;
+      const rect = galleryWindow.getBoundingClientRect();
+      galleryOffsetX = e.clientX - rect.left;
+      galleryOffsetY = e.clientY - rect.top;
+      galleryTitleBar.style.cursor = "grabbing";
+    });
+
+    document.addEventListener("mousemove", (e) => {
+      if (!galleryDragging) return;
+      galleryWindow.style.position = "absolute";
+      galleryWindow.style.left = (e.clientX - galleryOffsetX) + "px";
+      galleryWindow.style.top = (e.clientY - galleryOffsetY) + "px";
+    });
+
+    document.addEventListener("mouseup", () => {
+      galleryDragging = false;
+      galleryTitleBar.style.cursor = "grab";
+    });
+  }
+
+  /* Blog Dragging */
+  const blogWindow = document.getElementById("blogWindow");
+  const blogTitleBar = blogWindow?.querySelector(".popup-titlebar");
+  let blogDragging = false, blogOffsetX = 0, blogOffsetY = 0;
+
+  if (blogWindow && blogTitleBar) {
+    blogTitleBar.style.cursor = "grab";
+    blogTitleBar.addEventListener("mousedown", (e) => {
+      blogDragging = true;
+      const rect = blogWindow.getBoundingClientRect();
+      blogOffsetX = e.clientX - rect.left;
+      blogOffsetY = e.clientY - rect.top;
+      blogTitleBar.style.cursor = "grabbing";
+    });
+
+    document.addEventListener("mousemove", (e) => {
+      if (!blogDragging) return;
+      blogWindow.style.position = "absolute";
+      blogWindow.style.left = (e.clientX - blogOffsetX) + "px";
+      blogWindow.style.top = (e.clientY - blogOffsetY) + "px";
+    });
+
+    document.addEventListener("mouseup", () => {
+      blogDragging = false;
+      blogTitleBar.style.cursor = "grab";
+    });
+  }
+
+
+  /* =========================================================
+     F. GALLERY JSON AUTO-LOADER
+  ========================================================= */
+
+  const galleryGrid = document.getElementById("galleryGrid");
+  let galleryData = [];
+
+  fetch("gallery.json")
+    .then(res => res.json())
+    .then(data => {
+      galleryData = data;
+      buildGallery();
+    })
+    .catch(err => console.error("Gallery failed to load:", err));
+
+  function buildGallery() {
+    if (!galleryGrid) return;
+    galleryGrid.innerHTML = "";
+    galleryData.forEach((item, index) => {
+      const wrapper = document.createElement("div");
+      wrapper.className = "gallery-item";
+
+      if (item.type === "image") {
+        const img = document.createElement("img");
+        img.src = item.src;
+        img.onclick = () => openMedia(index);
+        wrapper.appendChild(img);
+      } else if (item.type === "video") {
+        const vid = document.createElement("video");
+        vid.src = item.src;
+        vid.muted = true;
+        vid.onclick = () => openMedia(index);
+        wrapper.appendChild(vid);
+      }
+      galleryGrid.appendChild(wrapper);
+    });
+  }
+
+
+  /* =========================================================
+     G. BLOG SYSTEM & ADMIN UTILITIES
+  ========================================================= */
+
+  let blogs = [];
+  localStorage.removeItem("blogs");
+
+  let archivedBlogs = JSON.parse(localStorage.getItem("archivedBlogs") || "[]");
+  let trash = JSON.parse(localStorage.getItem("trash") || "[]");
+  let drafts = JSON.parse(localStorage.getItem("drafts") || "[]");
+  let scheduledPosts = JSON.parse(localStorage.getItem("scheduledPosts") || "[]");
+
+  let viewMode = "active";
+  let adminUnlocked = false;
+
+  async function loadBlogs() {
+    try {
+      const response = await fetch("blog.json");
+      if (!response.ok) throw new Error("blog.json could not be loaded");
+      blogs = await response.json();
+      renderBlogs();
+    } catch (error) {
+      console.error("Blog loading error:", error);
+    }
+  }
+
+  function postBlog() {
+    const titleEl = document.getElementById("blogTitle");
+    const textEl = document.getElementById("blogText");
+    if (!titleEl || !textEl) return;
+
+    const text = textEl.value;
+    const title = titleEl.value;
+    if (!text.trim()) return;
+
+    blogs.unshift({ title: title || "Untitled", text, date: new Date().toLocaleString() });
+    saveBlogs();
+    titleEl.value = "";
+    textEl.value = "";
+    renderBlogs();
+    localStorage.removeItem("blogDraft");
+  }
+
+  function renderBlogs() {
+    const feed = document.getElementById("blogFeed");
+    if (!feed) return;
+
+    let data = blogs;
+    if (viewMode === "archived") data = archivedBlogs;
+    if (viewMode === "trash") data = trash;
+    if (viewMode === "drafts") data = drafts;
+    if (viewMode === "scheduled") data = scheduledPosts;
+
+    feed.innerHTML = data.map((b, index) => `
+      <div class="blog-post">
+        <div class="blog-header">
+          <span>${b.title}</span>
+          <span>${b.date || b.time || ""}</span>
+        </div>
+        <div class="blog-body">${b.text}</div>
+        ${adminUnlocked && viewMode === "active" ? `<button class="delete-btn" onclick="deletePost(${index})">🗑 Delete</button>` : ""}
+      </div>
+    `).join("");
+  }
+
+  function hidePanels() {
+    const feed = document.getElementById("blogFeed");
+    const panel = document.getElementById("textboxPanel");
+    if (feed) feed.style.display = "block";
+    if (panel) panel.style.display = "none";
+  }
+
+  function showActive() { viewMode = "active"; hidePanels(); renderBlogs(); }
+  function showArchived() { viewMode = "archived"; hidePanels(); renderBlogs(); }
+  function showTrash() { viewMode = "trash"; hidePanels(); renderBlogs(); }
+  function showDrafts() { viewMode = "drafts"; hidePanels(); renderBlogs(); }
+  function showScheduled() { viewMode = "scheduled"; hidePanels(); renderBlogs(); }
+
+  function showTextboxTab() {
+    viewMode = "textbox";
+    const feed = document.getElementById("blogFeed");
+    const panel = document.getElementById("textboxPanel");
+    if (feed) feed.style.display = "none";
+    if (panel) panel.style.display = "flex";
+  }
+
+  function unlockBlogAdmin() {
+    const code = prompt("Enter admin code:");
+    if (code === "ikeepmysecretssafewithme123") {
+      adminUnlocked = true;
+      document.querySelectorAll(".admin-only").forEach(btn => { btn.style.display = "inline-block"; });
+      showTextboxTab(); 
+      renderBlogs();
+    }
+  }
+
+  function archivePost(index) {
+    const post = blogs.splice(index, 1)[0];
+    if (!post) return;
+    archivedBlogs.unshift(post);
+    saveBlogs();
+    renderBlogs();
+  }
+
+  function deletePost(index) {
+    const post = blogs.splice(index, 1)[0];
+    if (!post) return;
+    trash.unshift(post);
+    saveBlogs();
+    renderBlogs();
+  }
+
+  function restorePost(index) {
+    const post = archivedBlogs.splice(index, 1)[0];
+    if (!post) return;
+    blogs.unshift(post);
+    saveBlogs();
+    renderBlogs();
+  }
+
+  function restoreFromTrash(index) {
+    const post = trash.splice(index, 1)[0];
+    if (!post) return;
+    blogs.unshift(post);
+    saveBlogs();
+    renderBlogs();
+  }
+
+  function permaDelete(index) {
+    if (!confirm("Delete forever?")) return;
+    trash.splice(index, 1);
+    saveBlogs();
+    renderBlogs();
+  }
+
+  function schedulePost() {
+    const title = document.getElementById("blogTitle")?.value || "";
+    const text = document.getElementById("blogText")?.value || "";
+    const time = document.getElementById("scheduleTime")?.value || "";
+    if (!text.trim() || !time) return;
+
+    scheduledPosts.push({ title, text, time });
+    localStorage.setItem("scheduledPosts", JSON.stringify(scheduledPosts));
+    alert("Post scheduled ⏳");
+    document.getElementById("blogTitle").value = "";
+    document.getElementById("blogText").value = "";
+    document.getElementById("scheduleTime").value = "";
+  }
+
+  function saveDraft() {
+    const titleEl = document.getElementById("blogTitle");
+    const textEl = document.getElementById("blogText");
+    if (!titleEl || !textEl) return;
+
+    const title = titleEl.value;
+    const text = textEl.value;
+    if (!text.trim() && !title.trim()) return;
+
+    const draft = { title: title || "Untitled", text, date: new Date().toLocaleString() };
+    drafts.unshift(draft);
+    localStorage.setItem("drafts", JSON.stringify(drafts));
+    titleEl.value = "";
+    textEl.value = "";
+    alert("Draft saved ✏️");
+  }
+
+  function saveBlogs() {
+    localStorage.setItem("blogs", JSON.stringify(blogs));
+    localStorage.setItem("archivedBlogs", JSON.stringify(archivedBlogs));
+    localStorage.setItem("trash", JSON.stringify(trash));
+  }
+
+  loadBlogs();
+
+  window.showDrafts = window.showDrafts || showDrafts;
+  window.showTrash = window.showTrash || showTrash;
+
+
+  /* =========================================================
+     H. 3D CURSOR & STAR TRAIL SYSTEM
+  ========================================================= */
+
+  const cursor = document.getElementById("space-cursor");
+  let mouseX = 0, mouseY = 0, currentX = 0, currentY = 0;
+
+  document.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    spawnStar(mouseX, mouseY);
+    spawnStar(mouseX, mouseY);
+    spawnStar(mouseX, mouseY);
+    spawnStar(mouseX, mouseY);
+  });
+
+  function animate() {
+    currentX += (mouseX - currentX) * 0.2;
+    currentY += (mouseY - currentY) * 0.2;
+    if (cursor) {
+      cursor.style.transform = `translate(${currentX}px, ${currentY}px) translate(-50%, -50%)`;
+    }
+    requestAnimationFrame(animate);
+  }
+  animate();
+
+  function spawnStar(x, y) {
+    const star = document.createElement("div");
+    star.className = "cursor-star";
+    const size = Math.random() * 3 + 1.5;
+    star.style.width = size + "px";
+    star.style.height = size + "px";
+    star.style.left = x + (Math.random() - 0.5) * 10 + "px";
+    star.style.top = y + (Math.random() - 0.5) * 10 + "px";
+    document.body.appendChild(star);
+    setTimeout(() => star.remove(), 900);
+  }
+
+
+  /* =========================================================
+     I. MUSIC PLAYER & AUDIO VISUALIZER SYSTEM
+  ========================================================= */
+
+  const player = document.getElementById("player");
+  const trackDisplay = document.getElementById("trackDisplay");
+  const musicStatus = document.getElementById("musicStatus");
+
+  let songs = [];
+  let queue = [];
+  let history = [];
+  let started = false;
+  let playlistReady = false;
+
+  fetch("mymusic.json")
+    .then(res => res.json())
+    .then(data => {
+      songs = data;
+      buildQueue();
+      playlistReady = true;
+      if (musicStatus) musicStatus.innerText = `Playlist (${songs.length} songs) 🎧`;
+    })
+    .catch(err => {
+      console.error(err);
+      if (musicStatus) musicStatus.innerText = "Playlist failed to load";
+    });
+
+  function shuffle(arr) {
+    const copy = [...arr];
+    for (let i = copy.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+    return copy;
+  }
+
+  function buildQueue() {
+    queue = shuffle(songs);
+  }
+
+  function playNextTrack() {
+    if (!playlistReady || !player) return;
+
+    if (!started) {
+      buildQueue();
+      started = true;
+    }
+
+    if (queue.length === 0) {
+      buildQueue();
+    }
+
+    const next = queue.shift();
+    if (!next) return;
+
+    if (player.src) {
+      history.push(player.src);
+    }
+
+    player.src = next.file;
+    player.load();
+
+    if (audioCtx && audioCtx.state === "suspended") {
+      audioCtx.resume();
+    }
+
+    player.play()
+      .then(() => {
+        if (trackDisplay) trackDisplay.innerText = "Now Playing: " + next.name;
+        if (musicStatus) musicStatus.innerText = "Listening to " + next.name;
+      })
+      .catch((err) => {
+        console.warn("Autoplay / play error:", err);
+        if (musicStatus) musicStatus.innerText = "Press play again";
+      });
+  }
+
+  function togglePlay(btn) {
+    flash(btn);
+    if (!audioUnlocked) {
+      audioCtx.resume();
+      audioUnlocked = true;
+    }
+
+    if (!player.src) {
+      playNextTrack();
+      return;
+    }
+
+    if (player.paused) {
+      player.play();
+    } else {
+      player.pause();
+    }
+  }
+
+  function nextSong(btn) {
+    flash(btn);
+    randomizeTheme();
+    playNextTrack();
+  }
+
+  player.addEventListener("ended", playNextTrack);
+
+  function previousSong(btn) {
+    if (btn) flash(btn);
+
+    if (player.currentTime > 3) {
+      player.currentTime = 0;
+      return;
+    }
+
+    if (history.length > 0) {
+      const prevSrc = history.pop();
+      const matchingSong = songs.find(s => s.file === prevSrc || prevSrc.includes(encodeURI(s.file)));
+      
+      player.src = prevSrc;
+      player.load();
+      player.play();
+
+      if (matchingSong) {
+        if (trackDisplay) trackDisplay.innerText = "Now Playing: " + matchingSong.name;
+        if (musicStatus) musicStatus.innerText = "Listening to " + matchingSong.name;
+      }
+    } else {
+      player.currentTime = 0;
+    }
+  }
+
+  /* Seek Bar Control */
+  const seekBar = document.getElementById("seekBar");
+  const currentTimeEl = document.getElementById("currentTime");
+  const durationEl = document.getElementById("duration");
+
+  player.addEventListener("loadedmetadata", () => {
+    if (seekBar) seekBar.max = Math.floor(player.duration);
+    if (durationEl) durationEl.textContent = formatTime(player.duration);
+  });
+
+  player.addEventListener("timeupdate", () => {
+    if (seekBar) seekBar.value = Math.floor(player.currentTime);
+    if (currentTimeEl) currentTimeEl.textContent = formatTime(player.currentTime);
+  });
+
+  seekBar?.addEventListener("input", () => {
+    player.currentTime = seekBar.value;
+  });
+
+  function formatTime(sec) {
+    const m = Math.floor(sec / 60);
+    const s = Math.floor(sec % 60).toString().padStart(2, "0");
+    return `${m}:${s}`;
+  }
+
+
 
 /* =========================
    VISUALIZER
